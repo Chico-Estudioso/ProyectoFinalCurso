@@ -29,13 +29,100 @@
                       <strong>{{ producto.precio | currency }}</strong>
                     </td>
                     <td>{{ producto.categoria }}</td>
-                    <td>{{ producto.valoracionMedia }}</td>
+                    <td
+                      [ngClass]="{
+                        'text-danger': producto.valoracionMedia < 3,
+                        'text-success':
+                          producto.valoracionMedia >= 3 &&
+                          producto.valoracionMedia < 4,
+                        'text-warning': producto.valoracionMedia >= 4
+                      }"
+                    >
+                      {{ producto.valoracionMedia }}
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-warning"
+                        (click)="openModal(producto)"
+                      >
+                        Modificar
+                      </button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="editModal" #editModal>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Editar Producto</h5>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            [(ngModel)]="selectedProduct.nombre"
+            name="nombre"
+          />
+        </div>
+        <div class="form-group">
+          <label for="descripcion">Descripción</label>
+          <textarea
+            class="form-control"
+            id="descripcion"
+            [(ngModel)]="selectedProduct.descripcion"
+            name="descripcion"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="precio">Precio</label>
+          <input
+            type="number"
+            class="form-control"
+            id="precio"
+            [(ngModel)]="selectedProduct.precio"
+            name="precio"
+          />
+        </div>
+        <div class="form-group">
+          <label for="categoria">Categoría</label>
+          <input
+            type="text"
+            class="form-control"
+            id="categoria"
+            [(ngModel)]="selectedProduct.categoria"
+            name="categoria"
+          />
+        </div>
+        <div class="form-group">
+          <label for="valoracionMedia">Valoración Media</label>
+          <input
+            type="number"
+            class="form-control"
+            id="valoracionMedia"
+            [(ngModel)]="selectedProduct.valoracionMedia"
+            name="valoracionMedia"
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="closeModal()">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-primary" (click)="saveChanges()">
+          Guardar
+        </button>
       </div>
     </div>
   </div>

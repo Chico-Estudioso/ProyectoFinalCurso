@@ -1,0 +1,400 @@
+[
+  {
+    "id": 1,
+    "nombre": "María Pérez",
+    "correo": "maria.perez@example.com",
+    "direccion": "Calle Principal 123",
+    "contrasenia": "maria123",
+    "valoraciones": [
+      {
+        "id": 1,
+        "cli": "María Pérez",
+        "prod": "Cascos Inalámbricos Bluetooth",
+        "descripcion": "Excelente calidad de sonido y muy cómodos de usar.",
+        "fecha": "2023-04-15"
+      },
+      {
+        "id": 2,
+        "cli": "María Pérez",
+        "prod": "Altavoz Portátil Resistente al Agua",
+        "descripcion": "Sonido potente y resistente al agua, perfecto para la playa.",
+        "fecha": "2023-03-20"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Juan García",
+    "correo": "juan.garcia@example.com",
+    "direccion": "Avenida Central 456",
+    "contrasenia": "juan456",
+    "valoraciones": [
+      {
+        "id": 3,
+        "cli": "Juan García",
+        "prod": "Micrófono de Estudio Profesional",
+        "descripcion": "Excelente micrófono para grabaciones de alta calidad.",
+        "fecha": "2023-02-10"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Laura Martínez",
+    "correo": "laura.martinez@example.com",
+    "direccion": "Plaza Mayor 789",
+    "contrasenia": "laura789",
+    "valoraciones": [
+      {
+        "id": 4,
+        "cli": "Laura Martínez",
+        "prod": "Auriculares Bluetooth con Cancelación de Ruido",
+        "descripcion": "Muy cómodos y la cancelación de ruido funciona muy bien.",
+        "fecha": "2023-01-25"
+      },
+      {
+        "id": 5,
+        "cli": "Laura Martínez",
+        "prod": "Altavoz Bluetooth con Luces LED",
+        "descripcion": "Sonido increíble y las luces LED le dan un toque divertido.",
+        "fecha": "2022-12-01"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Carlos Rodríguez",
+    "correo": "carlos.rodriguez@example.com",
+    "direccion": "Paseo del Parque 1011",
+    "contrasenia": "carlos1011",
+    "valoraciones": [
+      {
+        "id": 6,
+        "cli": "Carlos Rodríguez",
+        "prod": "Auriculares In-Ear con Cable",
+        "descripcion": "Buen sonido y cómodos de llevar.",
+        "fecha": "2023-03-10"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Ana López",
+    "correo": "ana.lopez@example.com",
+    "direccion": "Calle Real 1213",
+    "contrasenia": "ana1213",
+    "valoraciones": [
+      {
+        "id": 7,
+        "cli": "Ana López",
+        "prod": "Altavoz Bluetooth con Radio FM",
+        "descripcion": "Me encanta la radio FM integrada, perfecto para escuchar música variada.",
+        "fecha": "2023-02-18"
+      },
+      {
+        "id": 8,
+        "cli": "Ana López",
+        "prod": "Micrófono USB de Sobremesa",
+        "descripcion": "Muy práctico para videoconferencias, buen sonido.",
+        "fecha": "2023-01-05"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Pedro Sánchez",
+    "correo": "pedro.sanchez@example.com",
+    "direccion": "Avenida del Sol 1415",
+    "contrasenia": "pedro1415",
+    "valoraciones": [
+      {
+        "id": 9,
+        "cli": "Pedro Sánchez",
+        "prod": "Micrófono de Solapa Lavalier",
+        "descripcion": "Excelente calidad de sonido y muy discreto.",
+        "fecha": "2023-03-28"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "Sara Fernández",
+    "correo": "sara.fernandez@example.com",
+    "direccion": "Paseo Marítimo 1617",
+    "contrasenia": "sara1617",
+    "valoraciones": [
+      {
+        "id": 10,
+        "cli": "Sara Fernández",
+        "prod": "Auriculares Inalámbricos con Estuche de Carga",
+        "descripcion": "Muy prácticos y la batería dura mucho tiempo.",
+        "fecha": "2023-02-14"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Miguel González",
+    "correo": "miguel.gonzalez@example.com",
+    "direccion": "Callejón Oscuro 1819",
+    "contrasenia": "miguel1819",
+    "valoraciones": [
+      {
+        "id": 11,
+        "cli": "Miguel González",
+        "prod": "Altavoz Portátil con Manija",
+        "descripcion": "Muy práctico para llevar de un lado a otro, buen sonido.",
+        "fecha": "2023-01-30"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Elena Ruiz",
+    "correo": "elena.ruiz@example.com",
+    "direccion": "Plaza del Carmen 2021",
+    "contrasenia": "elena2021",
+    "valoraciones": [
+      {
+        "id": 12,
+        "cli": "Elena Ruiz",
+        "prod": "Micrófono de Solapa Inalámbrico",
+        "descripcion": "Muy útil para presentaciones, buena calidad de sonido.",
+        "fecha": "2023-03-05"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Javier Jiménez",
+    "correo": "javier.jimenez@example.com",
+    "direccion": "Avenida de la Paz 2223",
+    "contrasenia": "javier2223",
+    "valoraciones": [
+      {
+        "id": 23,
+        "cli": "Javier Jiménez",
+        "prod": "Cascos Inalámbricos Bluetooth",
+        "descripcion": "Excelente calidad de sonido y muy cómodos.",
+        "fecha": "2023-04-10"
+      },
+      {
+        "id": 24,
+        "cli": "Javier Jiménez",
+        "prod": "Micrófono de Estudio Profesional",
+        "descripcion": "Increíble micrófono para grabaciones de alta calidad.",
+        "fecha": "2023-03-25"
+      },
+      {
+        "id": 25,
+        "cli": "Javier Jiménez",
+        "prod": "Altavoz Bluetooth con Luces LED",
+        "descripcion": "Sonido impresionante y las luces LED le dan un toque único.",
+        "fecha": "2023-02-18"
+      },
+      {
+        "id": 26,
+        "cli": "Javier Jiménez",
+        "prod": "Auriculares Bluetooth con Cancelación de Ruido",
+        "descripcion": "Muy cómodos y la cancelación de ruido funciona a la perfección.",
+        "fecha": "2023-01-28"
+      },
+      {
+        "id": 27,
+        "cli": "Javier Jiménez",
+        "prod": "Micrófono de Solapa Inalámbrico",
+        "descripcion": "Excelente calidad de sonido y muy práctico para presentaciones.",
+        "fecha": "2023-03-12"
+      },
+      {
+        "id": 28,
+        "cli": "Javier Jiménez",
+        "prod": "Altavoz Portátil Resistente al Agua",
+        "descripcion": "Sonido increíble y muy resistente al agua, perfecto para la playa.",
+        "fecha": "2023-02-05"
+      },
+      {
+        "id": 29,
+        "cli": "Javier Jiménez",
+        "prod": "Auriculares Inalámbricos con Estuche de Carga",
+        "descripcion": "Muy cómodos y la batería dura mucho tiempo, excelente compra.",
+        "fecha": "2023-01-20"
+      },
+      {
+        "id": 30,
+        "cli": "Javier Jiménez",
+        "prod": "Micrófono USB de Sobremesa",
+        "descripcion": "Excelente calidad de sonido, perfecto para videoconferencias.",
+        "fecha": "2023-03-08"
+      },
+      {
+        "id": 31,
+        "cli": "Javier Jiménez",
+        "prod": "Altavoz Bluetooth con Radio FM",
+        "descripcion": "Me encanta poder escuchar radio FM mientras disfruto de la música.",
+        "fecha": "2023-02-12"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "Isabel Castro",
+    "correo": "isabel.castro@example.com",
+    "direccion": "Calle Nueva 2425",
+    "contrasenia": "isabel2425",
+    "valoraciones": [
+      {
+        "id": 13,
+        "cli": "Isabel Castro",
+        "prod": "Auriculares Gamer con Micrófono",
+        "descripcion": "Excelente sonido envolvente y micrófono de gran calidad.",
+        "fecha": "2023-04-01"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "nombre": "Antonio Herrera",
+    "correo": "antonio.herrera@example.com",
+    "direccion": "Paseo de la Libertad 2627",
+    "contrasenia": "antonio2627",
+    "valoraciones": [
+      {
+        "id": 14,
+        "cli": "Antonio Herrera",
+        "prod": "Altavoz Bluetooth con Power Bank",
+        "descripcion": "Muy útil poder cargar el móvil mientras escucho música.",
+        "fecha": "2023-02-22"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "nombre": "Carmen Morales",
+    "correo": "carmen.morales@example.com",
+    "direccion": "Avenida de la Victoria 2829",
+    "contrasenia": "carmen2829",
+    "valoraciones": [
+      {
+        "id": 15,
+        "cli": "Carmen Morales",
+        "prod": "Micrófono Dinámico para Directo",
+        "descripcion": "Excelente micrófono para actuaciones en vivo, gran calidad de sonido.",
+        "fecha": "2023-03-15"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "nombre": "Francisco Ortega",
+    "correo": "francisco.ortega@example.com",
+    "direccion": "Calle Mayor 3031",
+    "contrasenia": "francisco3031",
+    "valoraciones": [
+      {
+        "id": 16,
+        "cli": "Francisco Ortega",
+        "prod": "Auriculares Inalámbricos con Cancelación de Ruido",
+        "descripcion": "Muy cómodos y la cancelación de ruido funciona perfectamente.",
+        "fecha": "2023-01-18"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "nombre": "Rosa Navarro",
+    "correo": "rosa.navarro@example.com",
+    "direccion": "Plaza de la Constitución 3233",
+    "contrasenia": "rosa3233",
+    "valoraciones": [
+      {
+        "id": 17,
+        "cli": "Rosa Navarro",
+        "prod": "Altavoz Portátil con Micrófono Inalámbrico",
+        "descripcion": "Excelente para karaoke, el micrófono funciona muy bien.",
+        "fecha": "2023-03-12"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "nombre": "Diego Vargas",
+    "correo": "diego.vargas@example.com",
+    "direccion": "Paseo de los Olivos 3435",
+    "contrasenia": "diego3435",
+    "valoraciones": [
+      {
+        "id": 18,
+        "cli": "Diego Vargas",
+        "prod": "Micrófono de Condensador USB",
+        "descripcion": "Excelente calidad de grabación, perfecto para streaming.",
+        "fecha": "2023-02-28"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "nombre": "Luisa Delgado",
+    "correo": "luisa.delgado@example.com",
+    "direccion": "Callejón de los Gatos 3637",
+    "contrasenia": "luisa3637",
+    "valoraciones": [
+      {
+        "id": 19,
+        "cli": "Luisa Delgado",
+        "prod": "Auriculares Deportivos In-Ear",
+        "descripcion": "Muy cómodos y se mantienen bien en los oídos durante el ejercicio.",
+        "fecha": "2023-01-12"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "nombre": "Pablo Reyes",
+    "correo": "pablo.reyes@example.com",
+    "direccion": "Avenida de las Flores 3839",
+    "contrasenia": "pablo3839",
+    "valoraciones": [
+      {
+        "id": 20,
+        "cli": "Pablo Reyes",
+        "prod": "Micrófono de Condensador de Estudio",
+        "descripcion": "Excelente micrófono para grabaciones de alta calidad en el estudio.",
+        "fecha": "2023-03-22"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "nombre": "Marina Silva",
+    "correo": "marina.silva@example.com",
+    "direccion": "Calle de la Luna 4041",
+    "contrasenia": "marina4041",
+    "valoraciones": [
+      {
+        "id": 21,
+        "cli": "Marina Silva",
+        "prod": "Auriculares Inalámbricos con Cancelación de Ruido",
+        "descripcion": "Muy cómodos y la cancelación de ruido es excelente.",
+        "fecha": "2023-02-05"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "nombre": "Hugo Ramos",
+    "correo": "hugo.ramos@example.com",
+    "direccion": "Paseo de las Palmeras 4243",
+    "contrasenia": "hugo4243",
+    "valoraciones": [
+      {
+        "id": 22,
+        "cli": "Hugo Ramos",
+        "prod": "Altavoz Portátil Resistente al Agua",
+        "descripcion": "Excelente sonido y muy resistente al agua, perfecto para la playa.",
+        "fecha": "2023-03-18"
+      }
+    ]
+  }
+
+]
