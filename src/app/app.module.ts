@@ -8,7 +8,7 @@ import { ProdHubComponent } from './prod-hub/prod-hub.component';
 import { ValoracionesCliComponent } from './valoraciones-cli/valoraciones-cli.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    // AngularFontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

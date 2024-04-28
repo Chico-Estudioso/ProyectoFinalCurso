@@ -1,27 +1,27 @@
-<div class="container mt-3">
-  <main class="">
-    <div id="informativo" class="">
-      <h1 class="text-center border b-2 border-dark">Ejercicio de Prueba</h1>
-    </div>
-    <div class="row">
-      <div class="col-md-6 bg-success">
-        <div class="text-center">
-          <button type="button" class="btn btn-primary" routerLink="/prodhub">
-            HUB DE PRODUCTOS
-          </button>
-        </div>
-      </div>
-      <div class="col-md-6 bg-warning">
-        <div class="text-center">
-          <button
-            type="button"
-            class="btn btn-primary"
-            routerLink="/valoracionescli"
-          >
-            Valoraciones de Clientes
-          </button>
-        </div>
-      </div>
-    </div>
-  </main>
+<!-- Futura nav Bar pero lo coloco así para ser un diseño orientativo -->
+<div class="bodyClass">
+  <div class="buttons">
+    <a
+      class="btn btn-warning btn-lg"
+      routerLink="/prodhub"
+      [ngClass]="{ active: selectedButton === 'prodhub' }"
+      (click)="selectButton('prodhub')"
+      >HUB de Productos</a
+    >
+    <a
+      class="btn btn-warning btn-lg"
+      routerLink="/valoracionescli"
+      [ngClass]="{ active: selectedButton === 'valoracionescli' }"
+      (click)="selectButton('valoracionescli')"
+      >Valoraciones de Clientes</a
+    >
+  </div>
+  <a
+    href="#"
+    class="btn-scroll-top btn btn-primary btn-lg"
+    (click)="scrollToTop()"
+  >
+    <img src="assets/flecha.png" alt="Subir" class="arrowUp" />
+  </a>
 </div>
+<router-outlet></router-outlet>

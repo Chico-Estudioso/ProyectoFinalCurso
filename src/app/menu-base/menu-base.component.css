@@ -1,0 +1,60 @@
+.bodyClass {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  background-color: red;
+  color: white;
+}
+
+
+.arrowUp{
+  width: 50px;
+}
+
+.btn-scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.btn-scroll-top:hover {
+  transform: scale(1.1);
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+}
+
+.buttons a {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.buttons a:hover {
+  transform: scale(1.3);
+}
