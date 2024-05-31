@@ -1,31 +1,39 @@
-<h2>Iniciar Sesión</h2>
-<form (ngSubmit)="login()">
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Correo</mat-label>
+<div class="modal-header bg-primary text-white">
+  <h5 class="modal-title w-100 text-center">Iniciar Sesión</h5>
+  <button
+    type="button"
+    class="btn-close btn-close-white"
+    aria-label="Close"
+    (click)="onNoClick()"
+  ></button>
+</div>
+<div class="modal-body">
+  <form (ngSubmit)="login()" class="px-3">
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo</label>
       <input
-        matInput
         type="email"
+        id="correo"
+        class="form-control"
         [(ngModel)]="correo"
         name="correo"
         required
       />
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Contraseña</mat-label>
+    </div>
+    <div class="mb-3">
+      <label for="contrasenia" class="form-label">Contraseña</label>
       <input
-        matInput
         type="password"
+        id="contrasenia"
+        class="form-control"
         [(ngModel)]="contrasenia"
         name="contrasenia"
         required
       />
-    </mat-form-field>
-  </div>
-  <button mat-raised-button color="primary" type="submit">
-    Iniciar Sesión
-  </button>
-  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
-</form>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+    <div *ngIf="errorMessage" class="text-danger mt-2 text-center">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>

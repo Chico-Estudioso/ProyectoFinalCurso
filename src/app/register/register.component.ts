@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from '../auth.service';
 import { Cliente } from '../cliente';
 
@@ -15,11 +15,14 @@ export class RegisterComponent {
   direccion: string = '';
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    public dialogRef: MatDialogRef<RegisterComponent>,
+    private authService: AuthService
+  ) {}
 
   register() {
     const newUser: Cliente = {
-      id: 0,
+      id: Date.now(), // Generar un ID temporal
       nombre: this.nombre,
       correo: this.correo,
       contrasenia: this.contrasenia,
@@ -28,6 +31,12 @@ export class RegisterComponent {
     };
     if (!this.authService.register(newUser)) {
       this.errorMessage = 'El correo ya existe';
+    } else {
+      this.dialogRef.close(true);
     }
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

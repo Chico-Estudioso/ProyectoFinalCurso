@@ -5,7 +5,8 @@
     "descripcion": "Cascos inalámbricos con tecnología Bluetooth para una experiencia de audio sin cables.",
     "precio": 59.99,
     "categoria": "Cascos",
-    "valoracionMedia": 4.2
+    "valoracionMedia": 4.2,
+    "imagen": "assets/prod1.webp"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "descripcion": "Audífonos diseñados especialmente para actividades deportivas, resistentes al agua y al sudor.",
     "precio": 39.99,
     "categoria": "Audífonos",
-    "valoracionMedia": 3.7
+    "valoracionMedia": 3.7,
+    "imagen": "assets/prod2.webp"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "descripcion": "Micrófono de condensador de alta calidad ideal para grabaciones de estudio profesional.",
     "precio": 129.99,
     "categoria": "Micrófonos",
-    "valoracionMedia": 4.8
+    "valoracionMedia": 4.8,
+    "imagen": "assets/prod3.webp"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "descripcion": "Auriculares inalámbricos con tecnología de cancelación de ruido para una experiencia de audio inmersiva.",
     "precio": 89.99,
     "categoria": "Auriculares",
-    "valoracionMedia": 3.9
+    "valoracionMedia": 3.9,
+    "imagen": "assets/prod4.webp"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "descripcion": "Altavoz Bluetooth portátil resistente al agua, perfecto para llevarlo contigo a todas partes.",
     "precio": 49.99,
     "categoria": "Altavoces",
-    "valoracionMedia": 4.5
+    "valoracionMedia": 4.5,
+    "imagen": "assets/prod5.webp"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "descripcion": "Micrófono de solapa lavalier con conexión Jack de 3.5mm, ideal para entrevistas y grabaciones de voz.",
     "precio": 19.99,
     "categoria": "Micrófonos",
-    "valoracionMedia": 2.8
+    "valoracionMedia": 2.8,
+    "imagen": "assets/prod6.webp"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "descripcion": "Auriculares intraurales con cable de alta calidad y diseño ergonómico para un ajuste cómodo.",
     "precio": 29.99,
     "categoria": "Auriculares",
-    "valoracionMedia": 4.1
+    "valoracionMedia": 4.1,
+    "imagen": "assets/prod7.webp"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "descripcion": "Altavoz Bluetooth con luces LED integradas que cambian de color al ritmo de la música.",
     "precio": 69.99,
     "categoria": "Altavoces",
-    "valoracionMedia": 4.3
+    "valoracionMedia": 4.3,
+    "imagen": "assets/prod8.webp"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "descripcion": "Micrófono USB de sobremesa con trípode ajustable, perfecto para videoconferencias y streaming.",
     "precio": 59.99,
     "categoria": "Micrófonos",
-    "valoracionMedia": 4.9
+    "valoracionMedia": 4.9,
+    "imagen": "assets/prod9.webp"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "descripcion": "Auriculares inalámbricos con estuche de carga portátil para una autonomía extendida.",
     "precio": 79.99,
     "categoria": "Auriculares",
-    "valoracionMedia": 3.5
+    "valoracionMedia": 3.5,
+    "imagen": "assets/prod10.webp"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "descripcion": "Altavoz Bluetooth portátil con manija integrada para facilitar su transporte.",
     "precio": 39.99,
     "categoria": "Altavoces",
-    "valoracionMedia": 3.2
+    "valoracionMedia": 3.2,
+    "imagen": "assets/prod11.webp"
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "descripcion": "Micrófono de solapa inalámbrico con receptor USB, ideal para presentaciones y discursos.",
     "precio": 99.99,
     "categoria": "Micrófonos",
-    "valoracionMedia": 4.7
+    "valoracionMedia": 4.7,
+    "imagen": "assets/prod12.webp"
   },
   {
     "id": 13,
@@ -101,7 +113,8 @@
     "descripcion": "Auriculares diseñados para gamers con micrófono retractil y sonido envolvente.",
     "precio": 69.99,
     "categoria": "Auriculares",
-    "valoracionMedia": 3.8
+    "valoracionMedia": 3.8,
+    "imagen": "assets/prod13.webp"
   },
   {
     "id": 14,
@@ -109,7 +122,8 @@
     "descripcion": "Altavoz Bluetooth con radio FM integrada para escuchar tu música favorita sin límites.",
     "precio": 59.99,
     "categoria": "Altavoces",
-    "valoracionMedia": 2.6
+    "valoracionMedia": 2.6,
+    "imagen": "assets/prod14.webp"
   },
   {
     "id": 15,
@@ -117,7 +131,8 @@
     "descripcion": "Micrófono de condensador con conexión USB para grabaciones de alta calidad en tu computadora.",
     "precio": 79.99,
     "categoria": "Micrófonos",
-    "valoracionMedia": 4.2
+    "valoracionMedia": 4.2,
+    "imagen": "assets/prod15.webp"
   },
   {
     "id": 16,
@@ -125,7 +140,8 @@
     "descripcion": "Auriculares deportivos intraurales con gancho para la oreja, ideales para actividades deportivas.",
     "precio": 49.99,
     "categoria": "Auriculares",
-    "valoracionMedia": 2.9
+    "valoracionMedia": 2.9,
+    "imagen": "assets/prod16.webp"
   },
   {
     "id": 17,
@@ -133,7 +149,8 @@
     "descripcion": "Altavoz Bluetooth con función de Power Bank para cargar tus dispositivos móviles mientras escuchas música.",
     "precio": 89.99,
     "categoria": "Altavoces",
-    "valoracionMedia": 3.4
+    "valoracionMedia": 3.4,
+    "imagen": "assets/prod17.webp"
   },
   {
     "id": 18,
@@ -141,7 +158,8 @@
     "descripcion": "Micrófono dinámico diseñado para actuaciones en directo con un sonido nítido y potente.",
     "precio": 109.99,
     "categoria": "Micrófonos",
-    "valoracionMedia": 4.1
+    "valoracionMedia": 4.1,
+    "imagen": "assets/prod18.webp"
   },
   {
     "id": 19,
@@ -149,7 +167,8 @@
     "descripcion": "Auriculares inalámbricos con tecnología de cancelación de ruido para un sonido sin distracciones.",
     "precio": 129.99,
     "categoria": "Auriculares",
-    "valoracionMedia": 3.6
+    "valoracionMedia": 3.6,
+    "imagen": "assets/prod19.webp"
   },
   {
     "id": 20,
@@ -157,6 +176,7 @@
     "descripcion": "Altavoz portátil con micrófono inalámbrico incluido, perfecto para karaoke y fiestas.",
     "precio": 79.99,
     "categoria": "Altavoces",
-    "valoracionMedia": 4.3
+    "valoracionMedia": 4.3,
+    "imagen": "assets/prod20.webp"
   }
 ]

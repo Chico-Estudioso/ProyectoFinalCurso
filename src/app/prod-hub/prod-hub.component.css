@@ -1,52 +1,145 @@
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+/* Estilos generales del cuerpo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
 }
 
-.modal-dialog {
-  margin: 10% auto;
-  width: 80%;
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto;
+/* Estilos del encabezado */
+header {
+  text-align: center;
   padding: 20px;
-  border: 1px solid #888;
-  border-radius: 5px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
 }
 
-.text-danger {
-  color: #dc3545 !important;
+header h1 {
+  margin: 0;
+  font-size: 24px;
 }
 
-.text-success {
-  color: #28a745 !important;
+header p {
+  margin: 5px 0 0;
+  color: #555;
 }
 
-.text-warning {
-  color: #ffc107 !important;
+/* Lista de productos */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
 }
 
+/* Elementos del producto */
+.product-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 200px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-.modal-header {
-  padding: 10px 15px;
-  background-color: #007bff;
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.product-item h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-item .price {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.product-item .price.high-price {
+  color: #b12704;
+}
+
+.product-item .price.low-price {
+  color: #228B22;
+}
+
+.product-item .rating {
+  color: #ffa41c;
+  margin: 5px 0;
+}
+
+.product-item .description {
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.product-item .modify-button {
+  background-color: #ffd814;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.product-item .modify-button:hover {
+  background-color: #f7ca00;
+}
+
+.product-item .add-to-cart-button {
+  background-color: #007BFF;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
   color: white;
 }
 
-.modal-body {
-  padding: 10px 15px;
+.product-item .add-to-cart-button:hover {
+  background-color: #0056b3;
 }
 
-.modal-footer {
-  padding: 10px 15px;
-  background-color: #f9f9f9;
+/* Estilos del modal */
+.mat-dialog-title {
+  color: #fff;
+  background-color: #333;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.mat-dialog-content {
+  padding: 20px;
+  background-color: #444;
+  color: #fff;
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  background-color: #333;
+  border-top: 1px solid #ddd;
+}
+
+.mat-dialog-actions button {
+  margin-left: 10px;
+}
+
+.modal-field label {
+  color: #fff;
+}
+
+.readonly-field {
+  color: #ff0000;
 }

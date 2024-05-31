@@ -1,6 +1,7 @@
-// src/app/prod-hub/prod-hub.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ServicioBasicoService } from '../servicio-basico.service';
+import { Producto } from '../producto';
 
 @Component({
   selector: 'app-prod-hub',
@@ -8,37 +9,35 @@ import { ServicioBasicoService } from '../servicio-basico.service';
   styleUrls: ['./prod-hub.component.css'],
 })
 export class ProdHubComponent implements OnInit {
-  productos: any[] = [];
-  selectedProduct: any = null;
+  @ViewChild('modifyProductModal') modifyProductModal!: TemplateRef<any>;
+  productos: Producto[] = [];
+  dialogRef!: MatDialogRef<any>;
 
-  constructor(private servicioBasico: ServicioBasicoService) {}
+  constructor(
+    private servicioBasico: ServicioBasicoService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.servicioBasico.getProductos().subscribe((data) => {
       this.productos = data;
-      console.log(this.productos);
     });
   }
 
-  openModal(producto: any) {
-    this.selectedProduct = { ...producto };
-    (document.getElementById('editModal') as HTMLElement).style.display =
-      'block';
-  }
+  openModifyModal(producto: Producto): void {
+    this.dialogRef = this.dialog.open(this.modifyProductModal, {
+      width: '400px',
+      data: { producto },
+    });
 
-  closeModal() {
-    (document.getElementById('editModal') as HTMLElement).style.display =
-      'none';
-    this.selectedProduct = null;
-  }
-
-  saveChanges() {
-    const index = this.productos.findIndex(
-      (p) => p.id === this.selectedProduct.id
-    );
-    if (index !== -1) {
-      this.productos[index] = this.selectedProduct;
-    }
-    this.closeModal();
+    this.dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        // Lógica para manejar el resultado del modal
+        const index = this.productos.findIndex((p) => p.id === result.id);
+        if (index !== -1) {
+          this.productos[index] = result;
+        }
+      }
+    });
   }
 }

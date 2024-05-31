@@ -1,47 +1,61 @@
-<h2>Registrarse</h2>
-<form (ngSubmit)="register()">
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Nombre</mat-label>
-      <input matInput type="text" [(ngModel)]="nombre" name="nombre" required />
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Correo</mat-label>
+<div class="modal-header bg-primary text-white">
+  <h5 class="modal-title w-100 text-center">Registrarse</h5>
+  <button
+    type="button"
+    class="btn-close btn-close-white"
+    aria-label="Close"
+    (click)="onNoClick()"
+  ></button>
+</div>
+<div class="modal-body">
+  <form (ngSubmit)="register()" class="px-3">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
       <input
-        matInput
+        type="text"
+        id="nombre"
+        class="form-control"
+        [(ngModel)]="nombre"
+        name="nombre"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo</label>
+      <input
         type="email"
+        id="correo"
+        class="form-control"
         [(ngModel)]="correo"
         name="correo"
         required
       />
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Contraseña</mat-label>
+    </div>
+    <div class="mb-3">
+      <label for="contrasenia" class="form-label">Contraseña</label>
       <input
-        matInput
         type="password"
+        id="contrasenia"
+        class="form-control"
         [(ngModel)]="contrasenia"
         name="contrasenia"
         required
       />
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Dirección</mat-label>
+    </div>
+    <div class="mb-3">
+      <label for="direccion" class="form-label">Dirección</label>
       <input
-        matInput
         type="text"
+        id="direccion"
+        class="form-control"
         [(ngModel)]="direccion"
         name="direccion"
         required
       />
-    </mat-form-field>
-  </div>
-  <button mat-raised-button color="primary" type="submit">Registrarse</button>
-  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
-</form>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+    <div *ngIf="errorMessage" class="text-danger mt-2 text-center">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>

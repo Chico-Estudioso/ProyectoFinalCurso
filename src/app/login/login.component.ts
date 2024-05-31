@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +11,18 @@ export class LoginComponent {
   contrasenia: string = '';
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(public dialogRef: MatDialogRef<LoginComponent>) {}
 
   login() {
-    if (!this.authService.login(this.correo, this.contrasenia)) {
-      this.errorMessage = 'Invalid email or password';
+    // Aquí puedes añadir la lógica de autenticación
+    if (this.correo === 'test@test.com' && this.contrasenia === 'password') {
+      this.dialogRef.close(true);
+    } else {
+      this.errorMessage = 'Correo o contraseña incorrectos';
     }
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

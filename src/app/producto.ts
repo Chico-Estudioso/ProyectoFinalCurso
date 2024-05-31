@@ -1,3 +1,4 @@
+// src/app/producto.ts
 export class Producto {
   id!: number;
   nombre!: string;
@@ -5,4 +6,5 @@ export class Producto {
   precio!: number;
   categoria!: string;
   valoracionMedia!: number;
+  imagen!: string;
 }
