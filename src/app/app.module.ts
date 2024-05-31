@@ -8,6 +8,13 @@ import { ProdHubComponent } from './prod-hub/prod-hub.component';
 import { ValoracionesCliComponent } from './valoraciones-cli/valoraciones-cli.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ServicioBasicoService } from './servicio-basico.service';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
   declarations: [
@@ -15,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     MenuBaseComponent,
     ProdHubComponent,
     ValoracionesCliComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,9 +31,13 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatInputModule,
     // AngularFontAwesomeModule,
   ],
-  providers: [],
+  providers: [ServicioBasicoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,3 +1,4 @@
+<!-- src/app/prod-hub/prod-hub.component.html -->
 <div class="products-table">
   <div class="container my-5">
     <div class="row justify-content-center">
@@ -8,7 +9,6 @@
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <!-- table-bordered a incluir sino -->
               <table class="table table-hover mb-0">
                 <thead>
                   <tr>
@@ -18,6 +18,7 @@
                     <th>Precio</th>
                     <th>Categoría</th>
                     <th>Valoración Media</th>
+                    <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -65,7 +66,7 @@
       <div class="modal-header bg-primary text-white">
         <h5 class="modal-title">Editar Producto</h5>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" *ngIf="selectedProduct">
         <div class="form-group">
           <label for="nombre">Nombre</label>
           <input
@@ -120,7 +121,12 @@
         <button type="button" class="btn btn-danger" (click)="closeModal()">
           Cancelar
         </button>
-        <button type="button" class="btn btn-primary" (click)="saveChanges()">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="saveChanges()"
+          [disabled]="!selectedProduct"
+        >
           Guardar
         </button>
       </div>

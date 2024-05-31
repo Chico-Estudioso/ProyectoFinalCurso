@@ -1,21 +1,84 @@
-<!-- Futura nav Bar pero lo coloco así para ser un diseño orientativo -->
-<div class="bodyClass">
-  <div class="buttons">
-    <a
-      class="btn btn-warning btn-lg"
+<!-- src/app/menu-base/menu-base.component.html -->
+<header>
+  <div class="top-bar">
+    <div class="left-links">
+      <a href="#">SEARCH</a>
+      <a href="#">CLIENTES</a>
+    </div>
+    <div class="right-links">
+      <span
+        >Envío gratis en los pedidos de más de 79 € | Plazo de 60 días para
+        devolución y reembolso</span
+      >
+      <a href="#">ES</a>
+      <a (click)="openLoginDialog()">Iniciar sesión</a>
+      <a (click)="openRegisterDialog()">Registrarse</a>
+    </div>
+  </div>
+  <nav>
+    <img src="assets/logoMauSearch.webp" alt="MauSearch Logo" class="logo" />
+    <ul>
+      <li><a routerLink="#">Descubre Neo</a></li>
+      <li><a routerLink="#">Productos</a></li>
+      <li><a routerLink="#">Marketplace</a></li>
+      <li><a routerLink="#">Configuraciones</a></li>
+      <li><a routerLink="#">Custom Drops</a></li>
+      <li><a routerLink="#">Asistencia</a></li>
+      <li><a routerLink="#">Descargas</a></li>
+      <li>
+        <a routerLink="#"
+          ><img src="assets/!.webp" alt="Icon" class="cart-icon"
+        /></a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>EL BUSCADOR DE ÚLTIMA GENERACIÓN</h1>
+      <p>
+        Desde hace más de 10 años hemos tenido una variedad inmensa de productos
+        electrónicos de los cuales cada uno tenía más variedades. Con este
+        buscador, se acabó el perder dinero en los peores
+      </p>
+      <div class="hero-buttons">
+        <button class="primary-button">Descubre</button>
+        <button class="secondary-button">Haz un paquete y ahorra</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/icono.webp" alt="Teleprompter" />
+    </div>
+  </section>
+  <section class="products">
+    <div
+      class="product green-background"
       routerLink="/prodhub"
       [ngClass]="{ active: selectedButton === 'prodhub' }"
       (click)="selectButton('prodhub')"
-      >HUB de Productos</a
     >
-    <a
-      class="btn btn-warning btn-lg"
+      <img src="assets/electronica.jpeg" alt="Productos" />
+      <div class="product-info">
+        <h2 class="text-dark">HUB DE PRODUCTOS</h2>
+        <p>Simplifica tus tareas cotidianas</p>
+        <a routerLink="/prodhub">Descubre ></a>
+      </div>
+    </div>
+    <div
+      class="product green-background"
       routerLink="/valoracionescli"
       [ngClass]="{ active: selectedButton === 'valoracionescli' }"
       (click)="selectButton('valoracionescli')"
-      >Valoraciones de Clientes</a
     >
-  </div>
+      <img src="assets/clientes.jpeg" alt="Clientes" />
+      <div class="product-info">
+        <h2>VALORACIONES DE CLIENTES</h2>
+        <p>Un sonido que te acaricia</p>
+        <a routerLink="/valoracionescli">Descubre ></a>
+      </div>
+    </div>
+  </section>
   <a
     href="#"
     class="btn-scroll-top btn btn-primary btn-lg"
@@ -23,5 +86,5 @@
   >
     <img src="assets/flecha.png" alt="Subir" class="arrowUp" />
   </a>
-</div>
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</main>

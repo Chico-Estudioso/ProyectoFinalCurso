@@ -1,49 +1,44 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+// src/app/prod-hub/prod-hub.component.ts
+import { Component, OnInit } from '@angular/core';
+import { ServicioBasicoService } from '../servicio-basico.service';
 
 @Component({
   selector: 'app-prod-hub',
   templateUrl: './prod-hub.component.html',
   styleUrls: ['./prod-hub.component.css'],
 })
-export class ProdHubComponent {
-  @ViewChild('editModal')
-  editModal!: ElementRef;
-
+export class ProdHubComponent implements OnInit {
   productos: any[] = [];
-  productosJsonPath = '/assets/productos.json';
+  selectedProduct: any = null;
 
-  selectedProduct: any = {};
+  constructor(private servicioBasico: ServicioBasicoService) {}
 
-  constructor(private http: HttpClient) {
-    this.loadProductos();
-  }
-
-  loadProductos() {
-    this.http.get<any[]>(this.productosJsonPath).subscribe((data) => {
+  ngOnInit(): void {
+    this.servicioBasico.getProductos().subscribe((data) => {
       this.productos = data;
+      console.log(this.productos);
     });
   }
 
-  openModal(product: any) {
-    this.selectedProduct = { ...product };
-    this.editModal.nativeElement.style.display = 'block';
+  openModal(producto: any) {
+    this.selectedProduct = { ...producto };
+    (document.getElementById('editModal') as HTMLElement).style.display =
+      'block';
   }
 
   closeModal() {
-    this.editModal.nativeElement.style.display = 'none';
+    (document.getElementById('editModal') as HTMLElement).style.display =
+      'none';
+    this.selectedProduct = null;
   }
 
   saveChanges() {
-    this.updateProductInJson(this.selectedProduct);
-    this.closeModal();
-  }
-
-  updateProductInJson(product: any) {
-    const index = this.productos.findIndex((p) => p.id === product.id);
+    const index = this.productos.findIndex(
+      (p) => p.id === this.selectedProduct.id
+    );
     if (index !== -1) {
-      this.productos[index] = product;
-      this.http.put(this.productosJsonPath, this.productos).subscribe();
+      this.productos[index] = this.selectedProduct;
     }
+    this.closeModal();
   }
 }
