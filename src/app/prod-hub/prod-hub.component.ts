@@ -9,8 +9,8 @@ import { Producto } from '../producto';
   styleUrls: ['./prod-hub.component.css'],
 })
 export class ProdHubComponent implements OnInit {
-  @ViewChild('modifyProductModal') modifyProductModal!: TemplateRef<any>;
   productos: Producto[] = [];
+  @ViewChild('modifyProductModal') modifyProductModal!: TemplateRef<any>;
   dialogRef!: MatDialogRef<any>;
 
   constructor(
@@ -29,15 +29,11 @@ export class ProdHubComponent implements OnInit {
       width: '400px',
       data: { producto },
     });
+  }
 
-    this.dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        // Lógica para manejar el resultado del modal
-        const index = this.productos.findIndex((p) => p.id === result.id);
-        if (index !== -1) {
-          this.productos[index] = result;
-        }
-      }
-    });
+  saveChanges(producto: Producto): void {
+    // Lógica para guardar los cambios en el producto
+    console.log('Producto modificado:', producto);
+    this.dialogRef.close();
   }
 }
