@@ -1,4 +1,3 @@
-<!-- src/app/menu-base/menu-base.component.html -->
 <header>
   <div class="top-bar">
     <div class="left-links">
@@ -53,20 +52,20 @@
   </section>
   <section class="products">
     <div
-      class="product green-background"
+      class="product"
       routerLink="/prodhub"
       [ngClass]="{ active: selectedButton === 'prodhub' }"
       (click)="selectButton('prodhub')"
     >
       <img src="assets/electronica.jpeg" alt="Productos" />
       <div class="product-info">
-        <h2 class="text-dark">HUB DE PRODUCTOS</h2>
+        <h2>HUB DE PRODUCTOS</h2>
         <p>Simplifica tus tareas cotidianas</p>
         <a routerLink="/prodhub">Descubre ></a>
       </div>
     </div>
     <div
-      class="product green-background"
+      class="product"
       routerLink="/valoracionescli"
       [ngClass]="{ active: selectedButton === 'valoracionescli' }"
       (click)="selectButton('valoracionescli')"

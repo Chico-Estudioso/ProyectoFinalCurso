@@ -1,70 +1,93 @@
-<main>
-  <div class="product-list">
-    <div class="product-item" *ngFor="let producto of productos">
-      <img
-        [src]="'assets/prod' + producto.id + '.webp'"
-        [alt]="producto.nombre"
-      />
-      <h2>{{ producto.nombre }}</h2>
-      <p
-        class="price"
-        [ngClass]="{
-          'high-price': producto.precio > 100,
-          'low-price': producto.precio <= 100
-        }"
-      >
-        {{ producto.precio | currency : "EUR" }}
-      </p>
-      <p class="rating">{{ producto.valoracionMedia }} ★★★★★</p>
-      <p class="description">{{ producto.descripcion }}</p>
+<div class="product-list">
+  <div *ngFor="let producto of productos" class="product-item">
+    <img
+      [src]="'assets/prod' + producto.id + '.webp'"
+      [alt]="producto.nombre"
+    />
+    <h2>{{ producto.nombre }}</h2>
+    <p
+      class="price"
+      [ngClass]="{
+        expensive: producto.precio > 50,
+        cheap: producto.precio <= 50
+      }"
+    >
+      EUR {{ producto.precio | number : "1.2-2" }}
+    </p>
+    <p class="rating">{{ producto.valoracionMedia }} ★★★★☆</p>
+    <p class="description">{{ producto.descripcion }}</p>
+    <div class="button-group">
       <button class="modify-button" (click)="openModifyModal(producto)">
         Modificar
       </button>
-      <button class="add-to-cart-button">Añadir al carrito</button>
+      <button class="cart-button" (click)="addToCart(producto)">
+        Añadir al carrito
+      </button>
     </div>
   </div>
-</main>
+</div>
 
-<!-- Template del Modal -->
-<ng-template #modifyProductModal let-data="data">
-  <h2 mat-dialog-title>Modificar Producto</h2>
-  <mat-dialog-content>
-    <mat-form-field>
-      <mat-label>ID</mat-label>
-      <input
-        matInput
-        [value]="data.producto.id"
-        readonly
-        class="readonly-field"
-      />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Nombre</mat-label>
-      <input matInput [(ngModel)]="data.producto.nombre" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Descripción</mat-label>
-      <input matInput [(ngModel)]="data.producto.descripcion" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Precio</mat-label>
-      <input matInput [(ngModel)]="data.producto.precio" type="number" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Categoría</mat-label>
-      <input matInput [(ngModel)]="data.producto.categoria" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Valoración Media</mat-label>
-      <input
-        matInput
-        [(ngModel)]="data.producto.valoracionMedia"
-        type="number"
-      />
-    </mat-form-field>
-  </mat-dialog-content>
-  <mat-dialog-actions>
-    <button mat-button (click)="dialogRef.close()">Cancelar</button>
-    <button mat-button (click)="saveChanges(data.producto)">Guardar</button>
-  </mat-dialog-actions>
+<ng-template #modifyProductModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modificar Producto</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="modifyProductForm" (ngSubmit)="onSubmit(modal)">
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input
+          type="text"
+          id="id"
+          formControlName="id"
+          class="form-control"
+          [disabled]="true"
+        />
+      </div>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          id="nombre"
+          formControlName="nombre"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input
+          type="text"
+          id="descripcion"
+          formControlName="descripcion"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="precio">Precio</label>
+        <input
+          type="text"
+          id="precio"
+          formControlName="precio"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="valoracion">Valoración</label>
+        <input
+          type="text"
+          id="valoracion"
+          formControlName="valoracion"
+          class="form-control"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+  </div>
 </ng-template>
