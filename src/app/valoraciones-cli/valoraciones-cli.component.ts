@@ -1,6 +1,7 @@
 // src/app/valoraciones-cli/valoraciones-cli.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ServicioBasicoService } from '../servicio-basico.service';
+import { Valoracion } from '../valoracion';
 
 @Component({
   selector: 'app-valoraciones-cli',
@@ -8,13 +9,15 @@ import { ServicioBasicoService } from '../servicio-basico.service';
   styleUrls: ['./valoraciones-cli.component.css'],
 })
 export class ValoracionesCliComponent implements OnInit {
-  clientes: any[] = [];
+  valoraciones: Valoracion[] = [];
 
   constructor(private servicioBasico: ServicioBasicoService) {}
 
   ngOnInit(): void {
-    this.servicioBasico.getClientes().subscribe((data) => {
-      this.clientes = data;
+    this.servicioBasico.getClientes().subscribe((clientes) => {
+      clientes.forEach((cliente) => {
+        this.valoraciones.push(...cliente.valoraciones);
+      });
     });
   }
 }

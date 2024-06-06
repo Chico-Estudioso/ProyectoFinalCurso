@@ -11,14 +11,16 @@
         "cli": "María Pérez",
         "prod": "Cascos Inalámbricos Bluetooth",
         "descripcion": "Excelente calidad de sonido y muy cómodos de usar.",
-        "fecha": "2023-04-15"
+        "fecha": "2023-04-15",
+        "puntuacion": 4.9
       },
       {
         "id": 2,
         "cli": "María Pérez",
         "prod": "Altavoz Portátil Resistente al Agua",
         "descripcion": "Sonido potente y resistente al agua, perfecto para la playa.",
-        "fecha": "2023-03-20"
+        "fecha": "2023-03-20",
+        "puntuacion": 3.9
       }
     ]
   },
@@ -35,6 +37,8 @@
         "prod": "Micrófono de Estudio Profesional",
         "descripcion": "Excelente micrófono para grabaciones de alta calidad.",
         "fecha": "2023-02-10"
+        ,
+        "puntuacion": 1.9
       }
     ]
   },
@@ -51,6 +55,8 @@
         "prod": "Auriculares Bluetooth con Cancelación de Ruido",
         "descripcion": "Muy cómodos y la cancelación de ruido funciona muy bien.",
         "fecha": "2023-01-25"
+        ,
+        "puntuacion": 4.2
       },
       {
         "id": 5,
@@ -58,6 +64,8 @@
         "prod": "Altavoz Bluetooth con Luces LED",
         "descripcion": "Sonido increíble y las luces LED le dan un toque divertido.",
         "fecha": "2022-12-01"
+        ,
+        "puntuacion": 2.2
       }
     ]
   },
@@ -74,6 +82,8 @@
         "prod": "Auriculares In-Ear con Cable",
         "descripcion": "Buen sonido y cómodos de llevar.",
         "fecha": "2023-03-10"
+        ,
+        "puntuacion": 3.3
       }
     ]
   },
@@ -90,13 +100,16 @@
         "prod": "Altavoz Bluetooth con Radio FM",
         "descripcion": "Me encanta la radio FM integrada, perfecto para escuchar música variada.",
         "fecha": "2023-02-18"
+        ,
+        "puntuacion": 3.0
       },
       {
         "id": 8,
         "cli": "Ana López",
         "prod": "Micrófono USB de Sobremesa",
         "descripcion": "Muy práctico para videoconferencias, buen sonido.",
-        "fecha": "2023-01-05"
+        "fecha": "2023-01-05",
+        "puntuacion": 2.9
       }
     ]
   },
@@ -113,6 +126,8 @@
         "prod": "Micrófono de Solapa Lavalier",
         "descripcion": "Excelente calidad de sonido y muy discreto.",
         "fecha": "2023-03-28"
+        ,
+        "puntuacion": 1.9
       }
     ]
   },
@@ -129,6 +144,8 @@
         "prod": "Auriculares Inalámbricos con Estuche de Carga",
         "descripcion": "Muy prácticos y la batería dura mucho tiempo.",
         "fecha": "2023-02-14"
+        ,
+        "puntuacion": 3.5
       }
     ]
   },
@@ -145,6 +162,8 @@
         "prod": "Altavoz Portátil con Manija",
         "descripcion": "Muy práctico para llevar de un lado a otro, buen sonido.",
         "fecha": "2023-01-30"
+        ,
+        "puntuacion": 2.1
       }
     ]
   },
@@ -161,6 +180,8 @@
         "prod": "Micrófono de Solapa Inalámbrico",
         "descripcion": "Muy útil para presentaciones, buena calidad de sonido.",
         "fecha": "2023-03-05"
+        ,
+        "puntuacion": 1.9
       }
     ]
   },
@@ -177,6 +198,8 @@
         "prod": "Cascos Inalámbricos Bluetooth",
         "descripcion": "Excelente calidad de sonido y muy cómodos.",
         "fecha": "2023-04-10"
+        ,
+        "puntuacion": 4.9
       },
       {
         "id": 24,
@@ -184,6 +207,8 @@
         "prod": "Micrófono de Estudio Profesional",
         "descripcion": "Increíble micrófono para grabaciones de alta calidad.",
         "fecha": "2023-03-25"
+        ,
+        "puntuacion": 4.4
       },
       {
         "id": 25,
@@ -191,6 +216,8 @@
         "prod": "Altavoz Bluetooth con Luces LED",
         "descripcion": "Sonido impresionante y las luces LED le dan un toque único.",
         "fecha": "2023-02-18"
+        ,
+        "puntuacion": 2.9
       },
       {
         "id": 26,
@@ -198,6 +225,8 @@
         "prod": "Auriculares Bluetooth con Cancelación de Ruido",
         "descripcion": "Muy cómodos y la cancelación de ruido funciona a la perfección.",
         "fecha": "2023-01-28"
+        ,
+        "puntuacion": 1.9
       },
       {
         "id": 27,
@@ -205,6 +234,8 @@
         "prod": "Micrófono de Solapa Inalámbrico",
         "descripcion": "Excelente calidad de sonido y muy práctico para presentaciones.",
         "fecha": "2023-03-12"
+        ,
+        "puntuacion": 3.9
       },
       {
         "id": 28,
@@ -212,6 +243,8 @@
         "prod": "Altavoz Portátil Resistente al Agua",
         "descripcion": "Sonido increíble y muy resistente al agua, perfecto para la playa.",
         "fecha": "2023-02-05"
+        ,
+        "puntuacion": 3.8
       },
       {
         "id": 29,
@@ -219,6 +252,8 @@
         "prod": "Auriculares Inalámbricos con Estuche de Carga",
         "descripcion": "Muy cómodos y la batería dura mucho tiempo, excelente compra.",
         "fecha": "2023-01-20"
+        ,
+        "puntuacion": 4.9
       },
       {
         "id": 30,
@@ -226,6 +261,8 @@
         "prod": "Micrófono USB de Sobremesa",
         "descripcion": "Excelente calidad de sonido, perfecto para videoconferencias.",
         "fecha": "2023-03-08"
+        ,
+        "puntuacion": 4.9
       },
       {
         "id": 31,
@@ -233,6 +270,8 @@
         "prod": "Altavoz Bluetooth con Radio FM",
         "descripcion": "Me encanta poder escuchar radio FM mientras disfruto de la música.",
         "fecha": "2023-02-12"
+        ,
+        "puntuacion": 2.1
       }
     ]
   },
@@ -249,6 +288,8 @@
         "prod": "Auriculares Gamer con Micrófono",
         "descripcion": "Excelente sonido envolvente y micrófono de gran calidad.",
         "fecha": "2023-04-01"
+        ,
+        "puntuacion":2.1
       }
     ]
   },
@@ -265,6 +306,8 @@
         "prod": "Altavoz Bluetooth con Power Bank",
         "descripcion": "Muy útil poder cargar el móvil mientras escucho música.",
         "fecha": "2023-02-22"
+        ,
+        "puntuacion": 2.1
       }
     ]
   },
@@ -281,6 +324,8 @@
         "prod": "Micrófono Dinámico para Directo",
         "descripcion": "Excelente micrófono para actuaciones en vivo, gran calidad de sonido.",
         "fecha": "2023-03-15"
+        ,
+        "puntuacion": 4.4
       }
     ]
   },
@@ -297,6 +342,8 @@
         "prod": "Auriculares Inalámbricos con Cancelación de Ruido",
         "descripcion": "Muy cómodos y la cancelación de ruido funciona perfectamente.",
         "fecha": "2023-01-18"
+        ,
+        "puntuacion": 2.1
       }
     ]
   },
@@ -313,6 +360,8 @@
         "prod": "Altavoz Portátil con Micrófono Inalámbrico",
         "descripcion": "Excelente para karaoke, el micrófono funciona muy bien.",
         "fecha": "2023-03-12"
+        ,
+        "puntuacion": 3.9
       }
     ]
   },
@@ -329,6 +378,8 @@
         "prod": "Micrófono de Condensador USB",
         "descripcion": "Excelente calidad de grabación, perfecto para streaming.",
         "fecha": "2023-02-28"
+        ,
+        "puntuacion": 2.7
       }
     ]
   },
@@ -345,6 +396,8 @@
         "prod": "Auriculares Deportivos In-Ear",
         "descripcion": "Muy cómodos y se mantienen bien en los oídos durante el ejercicio.",
         "fecha": "2023-01-12"
+        ,
+        "puntuacion": 1.7
       }
     ]
   },
@@ -361,6 +414,8 @@
         "prod": "Micrófono de Condensador de Estudio",
         "descripcion": "Excelente micrófono para grabaciones de alta calidad en el estudio.",
         "fecha": "2023-03-22"
+        ,
+        "puntuacion": 4.9
       }
     ]
   },
@@ -377,6 +432,8 @@
         "prod": "Auriculares Inalámbricos con Cancelación de Ruido",
         "descripcion": "Muy cómodos y la cancelación de ruido es excelente.",
         "fecha": "2023-02-05"
+        ,
+        "puntuacion": 4.1
       }
     ]
   },
@@ -393,6 +450,8 @@
         "prod": "Altavoz Portátil Resistente al Agua",
         "descripcion": "Excelente sonido y muy resistente al agua, perfecto para la playa.",
         "fecha": "2023-03-18"
+        ,
+        "puntuacion": 5
       }
     ]
   }

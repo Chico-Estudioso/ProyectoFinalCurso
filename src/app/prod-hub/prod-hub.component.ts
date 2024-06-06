@@ -67,4 +67,10 @@ export class ProdHubComponent implements OnInit {
   addToCart(producto: Producto): void {
     console.log(`Producto añadido al carrito: ${producto.nombre}`);
   }
+
+  getRatingStars(rating: number): string {
+    const filledStars = Math.floor(rating);
+    const emptyStars = 5 - filledStars;
+    return '★'.repeat(filledStars) + '☆'.repeat(emptyStars);
+  }
 }

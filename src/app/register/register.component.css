@@ -1,43 +1,144 @@
-/* src/app/register/register.component.css */
-.modal-header {
-  background-color: #2c3e50;
-  color: white;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
 }
 
-.modal-body {
-  background-color: #34495e;
-  color: white;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.modal-title {
-  color: #e67e22;
+.header {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
 }
 
-.btn-primary {
-  background-color: #e67e22;
+.back-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+}
+
+.welcome-message h1 {
+  font-size: 24px;
+  color: #4b0082;
+}
+
+.welcome-message p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.welcome-message a {
+  color: #ff4500;
+  text-decoration: none;
+}
+
+.social-login h2,
+.email-register h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.social-button {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 10px;
+  color: #fff;
   border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.btn-primary:hover {
-  background-color: #d35400;
+.facebook {
+  background-color: #1877f2;
 }
 
-.btn-close {
-  color: white;
-  opacity: 1;
+.google {
+  background-color: #db4437;
 }
 
-.text-danger {
-  color: #e74c3c;
+.twitch {
+  background-color: #9146ff;
 }
 
-@media (max-width: 768px) {
-  .modal-dialog {
-    margin: 20px;
-  }
+.apple {
+  background-color: #000;
+}
 
-  .modal-header,
-  .modal-body {
-    padding: 10px;
-  }
+.email-register form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-register label {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  margin: 5px 0;
+}
+
+.email-register input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkbox-group {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input {
+  margin-right: 10px;
+}
+
+.register-button {
+  background-color: #800080;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.register-button:hover {
+  background-color: #6a006a;
+}
+
+.terms {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.terms a {
+  color: #4b0082;
+  text-decoration: none;
 }

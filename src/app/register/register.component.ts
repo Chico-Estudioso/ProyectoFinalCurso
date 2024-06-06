@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
-import { AuthService } from '../auth.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ServicioBasicoService } from '../servicio-basico.service';
 import { Cliente } from '../cliente';
 
 @Component({
@@ -8,35 +9,44 @@ import { Cliente } from '../cliente';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent {
-  nombre: string = '';
-  correo: string = '';
-  contrasenia: string = '';
-  direccion: string = '';
-  errorMessage: string = '';
+export class RegisterComponent implements OnInit {
+  registerForm: FormGroup;
 
   constructor(
-    public dialogRef: MatDialogRef<RegisterComponent>,
-    private authService: AuthService
-  ) {}
-
-  register() {
-    const newUser: Cliente = {
-      id: Date.now(), // Generar un ID temporal
-      nombre: this.nombre,
-      correo: this.correo,
-      contrasenia: this.contrasenia,
-      direccion: this.direccion,
-      valoraciones: [],
-    };
-    if (!this.authService.register(newUser)) {
-      this.errorMessage = 'El correo ya existe';
-    } else {
-      this.dialogRef.close(true);
-    }
+    private fb: FormBuilder,
+    private router: Router,
+    private servicioBasico: ServicioBasicoService
+  ) {
+    this.registerForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      birthdate: ['', Validators.required],
+      news: [false],
+      terms: [false, Validators.requiredTrue],
+    });
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  ngOnInit(): void {}
+
+  onSubmit(): void {
+    if (this.registerForm.valid) {
+      const newCliente: Cliente = {
+        id: Date.now(), // Esto es solo para la simulación. En un entorno real, el ID debería ser generado por el backend.
+        nombre: this.registerForm.value.username,
+        correo: this.registerForm.value.email,
+        direccion: '',
+        contrasenia: this.registerForm.value.password,
+        valoraciones: [],
+      };
+
+      this.servicioBasico.register(newCliente).subscribe((success) => {
+        if (success) {
+          this.router.navigate(['/home']); // Redirige al usuario a la página principal
+        } else {
+          alert('Error en el registro');
+        }
+      });
+    }
   }
 }

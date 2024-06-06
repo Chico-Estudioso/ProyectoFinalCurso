@@ -1,23 +1,23 @@
-<p>Descripción del proyecto: (PD: Leer código de este html)</p>
-<div>
-  Este proyecto, está conformado por dos principales apartados entre los que se
-  encuentran un HUD para los productos. Y un pequeño apartado para los clientes,
-  el cual está incompleto. En el apartado de los productos tengo programada una
-  tabla que viene de Json dicho jota son se encuentra en la carpeta sets con 20
-  productos distintos entre los cuales tiene un atributo que se llama valoración
-  media, el cual en cuanto está el proyecto. Totalizado con los demás
-  integrantes recibiré ese dato y se calculará una media dinámica para poder
-  colocarla en el atributo de la tabla. Este atributo cambia el color Del. Texto
-  de valoración media conforme número sea. He querido hacerlo todo esto como si
-  fuera la vista administrador, entonces se puede modificar cualquier producto
-  lo que pasa que el cambio no se verá reflejado en el Json para que yo pueda
-  trabajar sin modificación hasta finalizar.
+<!-- src/app/valoraciones-cli/valoraciones-cli.component.html -->
+<div class="reviews">
+  <div *ngFor="let valoracion of valoraciones" class="review">
+    <div class="review-header">
+      <div class="review-avatar">{{ valoracion.cli.charAt(0) }}</div>
+      <div class="review-info">
+        <h3>{{ valoracion.cli }}</h3>
+        <div class="review-rating">{{ valoracion.puntuacion }}/5</div>
+      </div>
+    </div>
+    <div class="review-body">
+      <h4>{{ valoracion.prod }}</h4>
+      <p>Calificado el {{ valoracion.fecha }}</p>
+      <p>
+        <span class="verified">Compra verificada</span>
+      </p>
+      <p>{{ valoracion.descripcion }}</p>
+    </div>
+    <div class="review-footer">
+      <a href="#">Reportar</a>
+    </div>
+  </div>
 </div>
-
-<!-- <p>
-  Debido al cambio de proyecto camacho,
-  esto no he podido hacerlo y me he centrado en 5 días dedicándole
-  muchas horas al proyecto para dejar este front,
-  tanto el login como el modificar aún tienen que
-  mejorar la lógica pero lo que es el front espero que esté bien
-</p> -->

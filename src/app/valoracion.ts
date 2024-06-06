@@ -4,4 +4,5 @@ export class Valoracion {
   prod!: string;
   descripcion!: string;
   fecha!: string;
+  puntuacion!: number;
 }
