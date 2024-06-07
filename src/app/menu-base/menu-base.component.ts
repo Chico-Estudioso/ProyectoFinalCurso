@@ -1,8 +1,9 @@
+// src/app/menu-base/menu-base.component.ts
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
-import { AsistenciaComponent } from '../asistencia/asistencia.component'; // Importar el componente de asistencia
+import { AsistenciaComponent } from '../asistencia/asistencia.component';
 
 @Component({
   selector: 'app-menu-base',
