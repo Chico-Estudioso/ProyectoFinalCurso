@@ -1,3 +1,4 @@
+// src/app/login/login.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,6 +11,7 @@ import { ServicioBasicoService } from '../servicio-basico.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  errorMessage: string | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -17,8 +19,8 @@ export class LoginComponent implements OnInit {
     private servicioBasico: ServicioBasicoService
   ) {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
+      correo: ['', [Validators.required, Validators.email]],
+      contrasenia: ['', Validators.required],
     });
   }
 
@@ -26,12 +28,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      const { username, password } = this.loginForm.value;
-      this.servicioBasico.login(username, password).subscribe((success) => {
-        if (success) {
-          this.router.navigate(['/home']); // Redirige al usuario a la página principal
+      const { correo, contrasenia } = this.loginForm.value;
+      this.servicioBasico.login(correo, contrasenia).subscribe((isLoggedIn) => {
+        if (isLoggedIn) {
+          this.router.navigate(['/']);
         } else {
-          alert('Nombre de usuario o contraseña incorrectos');
+          this.errorMessage = 'Correo o contraseña incorrectos.';
         }
       });
     }

@@ -13,6 +13,7 @@ export class ServicioBasicoService {
   private clientesUrl = 'assets/clientes.json';
   private productosUrl = 'assets/productos.json';
   private clientes: Cliente[] = [];
+  private loggedInUser: Cliente | null = null;
 
   constructor(private http: HttpClient) {
     this.loadClientes();
@@ -59,16 +60,23 @@ export class ServicioBasicoService {
     return valoraciones;
   }
 
-  login(username: string, password: string): Observable<boolean> {
+  login(correo: string, contrasenia: string): Observable<boolean> {
     const cliente = this.clientes.find(
-      (c) => c.nombre === username && c.contrasenia === password
+      (c) => c.correo === correo && c.contrasenia === contrasenia
     );
+    this.loggedInUser = cliente || null;
     return of(!!cliente);
   }
 
   register(newCliente: Cliente): Observable<boolean> {
-    // Aquí se simula la registración. En un entorno real, esto implicaría una llamada a un backend.
-    this.clientes.push(newCliente);
-    return of(true);
+    const clienteExists = this.clientes.some(
+      (c) => c.correo === newCliente.correo
+    );
+    if (!clienteExists) {
+      this.clientes.push(newCliente);
+      return of(true);
+    } else {
+      return of(false);
+    }
   }
 }

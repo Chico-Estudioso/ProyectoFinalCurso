@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
+import { AsistenciaComponent } from '../asistencia/asistencia.component'; // Importar el componente de asistencia
 
 @Component({
   selector: 'app-menu-base',
@@ -34,6 +35,18 @@ export class MenuBaseComponent {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Register dialog result: ${result}`);
+    });
+  }
+
+  openAsistenciaDialog() {
+    const dialogRef = this.dialog.open(AsistenciaComponent, {
+      width: '100%',
+      maxWidth: '800px',
+      panelClass: 'custom-dialog-container',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Asistencia dialog result: ${result}`);
     });
   }
 

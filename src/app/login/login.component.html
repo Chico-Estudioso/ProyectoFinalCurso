@@ -10,7 +10,6 @@
       </p>
     </div>
     <div class="social-login">
-      <h2>Iniciar sesión con una cuenta social</h2>
       <button class="social-button facebook">
         INICIAR SESIÓN CON FACEBOOK
       </button>
@@ -18,7 +17,6 @@
       <button class="social-button apple">INICIAR SESIÓN CON APPLE</button>
     </div>
     <div class="username-login">
-      <h2>Iniciar sesión con nombre de usuario</h2>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <label for="username">Nombre de usuario</label>
         <input type="text" id="username" formControlName="username" />

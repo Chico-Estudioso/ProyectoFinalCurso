@@ -1,3 +1,4 @@
+// src/app/register/register.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,6 +12,7 @@ import { Cliente } from '../cliente';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  errorMessage: string | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -18,12 +20,10 @@ export class RegisterComponent implements OnInit {
     private servicioBasico: ServicioBasicoService
   ) {
     this.registerForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-      birthdate: ['', Validators.required],
-      news: [false],
-      terms: [false, Validators.requiredTrue],
+      correo: ['', [Validators.required, Validators.email]],
+      nombre: ['', Validators.required],
+      contrasenia: ['', Validators.required],
+      direccion: ['', Validators.required],
     });
   }
 
@@ -31,20 +31,12 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(): void {
     if (this.registerForm.valid) {
-      const newCliente: Cliente = {
-        id: Date.now(), // Esto es solo para la simulación. En un entorno real, el ID debería ser generado por el backend.
-        nombre: this.registerForm.value.username,
-        correo: this.registerForm.value.email,
-        direccion: '',
-        contrasenia: this.registerForm.value.password,
-        valoraciones: [],
-      };
-
-      this.servicioBasico.register(newCliente).subscribe((success) => {
-        if (success) {
-          this.router.navigate(['/home']); // Redirige al usuario a la página principal
+      const newUser: Cliente = this.registerForm.value;
+      this.servicioBasico.register(newUser).subscribe((isRegistered) => {
+        if (isRegistered) {
+          this.router.navigate(['/login']);
         } else {
-          alert('Error en el registro');
+          this.errorMessage = 'El correo ya está registrado.';
         }
       });
     }

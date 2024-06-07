@@ -35,9 +35,8 @@
         "id": 3,
         "cli": "Juan García",
         "prod": "Micrófono de Estudio Profesional",
-        "descripcion": "Excelente micrófono para grabaciones de alta calidad.",
-        "fecha": "2023-02-10"
-        ,
+        "descripcion": "No es tan bueno como otros micrófonos que he usado.",
+        "fecha": "2023-02-10",
         "puntuacion": 1.9
       }
     ]
@@ -54,17 +53,15 @@
         "cli": "Laura Martínez",
         "prod": "Auriculares Bluetooth con Cancelación de Ruido",
         "descripcion": "Muy cómodos y la cancelación de ruido funciona muy bien.",
-        "fecha": "2023-01-25"
-        ,
+        "fecha": "2023-01-25",
         "puntuacion": 4.2
       },
       {
         "id": 5,
         "cli": "Laura Martínez",
         "prod": "Altavoz Bluetooth con Luces LED",
-        "descripcion": "Sonido increíble y las luces LED le dan un toque divertido.",
-        "fecha": "2022-12-01"
-        ,
+        "descripcion": "Sonido increíble, pero las luces LED son un poco molestas.",
+        "fecha": "2022-12-01",
         "puntuacion": 2.2
       }
     ]
@@ -80,9 +77,8 @@
         "id": 6,
         "cli": "Carlos Rodríguez",
         "prod": "Auriculares In-Ear con Cable",
-        "descripcion": "Buen sonido y cómodos de llevar.",
-        "fecha": "2023-03-10"
-        ,
+        "descripcion": "Buen sonido, pero no tan cómodos como otros auriculares.",
+        "fecha": "2023-03-10",
         "puntuacion": 3.3
       }
     ]
@@ -98,16 +94,15 @@
         "id": 7,
         "cli": "Ana López",
         "prod": "Altavoz Bluetooth con Radio FM",
-        "descripcion": "Me encanta la radio FM integrada, perfecto para escuchar música variada.",
-        "fecha": "2023-02-18"
-        ,
+        "descripcion": "Me encanta la radio FM, pero el sonido no es tan bueno como otros altavoces.",
+        "fecha": "2023-02-18",
         "puntuacion": 3.0
       },
       {
         "id": 8,
         "cli": "Ana López",
         "prod": "Micrófono USB de Sobremesa",
-        "descripcion": "Muy práctico para videoconferencias, buen sonido.",
+        "descripcion": "Funciona bien, pero no es tan práctico como otros micrófonos.",
         "fecha": "2023-01-05",
         "puntuacion": 2.9
       }
@@ -124,9 +119,8 @@
         "id": 9,
         "cli": "Pedro Sánchez",
         "prod": "Micrófono de Solapa Lavalier",
-        "descripcion": "Excelente calidad de sonido y muy discreto.",
-        "fecha": "2023-03-28"
-        ,
+        "descripcion": "No es tan discreto como otros micrófonos.",
+        "fecha": "2023-03-28",
         "puntuacion": 1.9
       }
     ]
@@ -143,8 +137,7 @@
         "cli": "Sara Fernández",
         "prod": "Auriculares Inalámbricos con Estuche de Carga",
         "descripcion": "Muy prácticos y la batería dura mucho tiempo.",
-        "fecha": "2023-02-14"
-        ,
+        "fecha": "2023-02-14",
         "puntuacion": 3.5
       }
     ]
@@ -160,9 +153,8 @@
         "id": 11,
         "cli": "Miguel González",
         "prod": "Altavoz Portátil con Manija",
-        "descripcion": "Muy práctico para llevar de un lado a otro, buen sonido.",
-        "fecha": "2023-01-30"
-        ,
+        "descripcion": "Muy práctico para llevar de un lado a otro, pero no es tan resistente al agua como se promete.",
+        "fecha": "2023-01-30",
         "puntuacion": 2.1
       }
     ]
@@ -178,9 +170,8 @@
         "id": 12,
         "cli": "Elena Ruiz",
         "prod": "Micrófono de Solapa Inalámbrico",
-        "descripcion": "Muy útil para presentaciones, buena calidad de sonido.",
-        "fecha": "2023-03-05"
-        ,
+        "descripcion": "No es tan fácil de usar como otros micrófonos.",
+        "fecha": "2023-03-05",
         "puntuacion": 1.9
       }
     ]
@@ -197,8 +188,7 @@
         "cli": "Javier Jiménez",
         "prod": "Cascos Inalámbricos Bluetooth",
         "descripcion": "Excelente calidad de sonido y muy cómodos.",
-        "fecha": "2023-04-10"
-        ,
+        "fecha": "2023-04-10",
         "puntuacion": 4.9
       },
       {
@@ -206,17 +196,15 @@
         "cli": "Javier Jiménez",
         "prod": "Micrófono de Estudio Profesional",
         "descripcion": "Increíble micrófono para grabaciones de alta calidad.",
-        "fecha": "2023-03-25"
-        ,
+        "fecha": "2023-03-25",
         "puntuacion": 4.4
       },
       {
         "id": 25,
         "cli": "Javier Jiménez",
         "prod": "Altavoz Bluetooth con Luces LED",
-        "descripcion": "Sonido impresionante y las luces LED le dan un toque único.",
-        "fecha": "2023-02-18"
-        ,
+        "descripcion": "Sonido impresionante, pero las luces LED le dan un toque un poco molesto.",
+        "fecha": "2023-02-18",
         "puntuacion": 2.9
       },
       {
@@ -224,8 +212,7 @@
         "cli": "Javier Jiménez",
         "prod": "Auriculares Bluetooth con Cancelación de Ruido",
         "descripcion": "Muy cómodos y la cancelación de ruido funciona a la perfección.",
-        "fecha": "2023-01-28"
-        ,
+        "fecha": "2023-01-28",
         "puntuacion": 1.9
       },
       {
@@ -233,8 +220,7 @@
         "cli": "Javier Jiménez",
         "prod": "Micrófono de Solapa Inalámbrico",
         "descripcion": "Excelente calidad de sonido y muy práctico para presentaciones.",
-        "fecha": "2023-03-12"
-        ,
+        "fecha": "2023-03-12",
         "puntuacion": 3.9
       },
       {
@@ -242,8 +228,7 @@
         "cli": "Javier Jiménez",
         "prod": "Altavoz Portátil Resistente al Agua",
         "descripcion": "Sonido increíble y muy resistente al agua, perfecto para la playa.",
-        "fecha": "2023-02-05"
-        ,
+        "fecha": "2023-02-05",
         "puntuacion": 3.8
       },
       {
@@ -251,8 +236,7 @@
         "cli": "Javier Jiménez",
         "prod": "Auriculares Inalámbricos con Estuche de Carga",
         "descripcion": "Muy cómodos y la batería dura mucho tiempo, excelente compra.",
-        "fecha": "2023-01-20"
-        ,
+        "fecha": "2023-01-20",
         "puntuacion": 4.9
       },
       {
@@ -260,8 +244,7 @@
         "cli": "Javier Jiménez",
         "prod": "Micrófono USB de Sobremesa",
         "descripcion": "Excelente calidad de sonido, perfecto para videoconferencias.",
-        "fecha": "2023-03-08"
-        ,
+        "fecha": "2023-03-08",
         "puntuacion": 4.9
       },
       {
@@ -269,8 +252,7 @@
         "cli": "Javier Jiménez",
         "prod": "Altavoz Bluetooth con Radio FM",
         "descripcion": "Me encanta poder escuchar radio FM mientras disfruto de la música.",
-        "fecha": "2023-02-12"
-        ,
+        "fecha": "2023-02-12",
         "puntuacion": 2.1
       }
     ]
@@ -286,10 +268,9 @@
         "id": 13,
         "cli": "Isabel Castro",
         "prod": "Auriculares Gamer con Micrófono",
-        "descripcion": "Excelente sonido envolvente y micrófono de gran calidad.",
-        "fecha": "2023-04-01"
-        ,
-        "puntuacion":2.1
+        "descripcion": "Excelente sonido envolvente, pero el micrófono no es tan bueno como otros.",
+        "fecha": "2023-04-01",
+        "puntuacion": 2.1
       }
     ]
   },
@@ -305,8 +286,7 @@
         "cli": "Antonio Herrera",
         "prod": "Altavoz Bluetooth con Power Bank",
         "descripcion": "Muy útil poder cargar el móvil mientras escucho música.",
-        "fecha": "2023-02-22"
-        ,
+        "fecha": "2023-02-22",
         "puntuacion": 2.1
       }
     ]
@@ -323,8 +303,7 @@
         "cli": "Carmen Morales",
         "prod": "Micrófono Dinámico para Directo",
         "descripcion": "Excelente micrófono para actuaciones en vivo, gran calidad de sonido.",
-        "fecha": "2023-03-15"
-        ,
+        "fecha": "2023-03-15",
         "puntuacion": 4.4
       }
     ]
@@ -341,8 +320,7 @@
         "cli": "Francisco Ortega",
         "prod": "Auriculares Inalámbricos con Cancelación de Ruido",
         "descripcion": "Muy cómodos y la cancelación de ruido funciona perfectamente.",
-        "fecha": "2023-01-18"
-        ,
+        "fecha": "2023-01-18",
         "puntuacion": 2.1
       }
     ]
@@ -358,9 +336,8 @@
         "id": 17,
         "cli": "Rosa Navarro",
         "prod": "Altavoz Portátil con Micrófono Inalámbrico",
-        "descripcion": "Excelente para karaoke, el micrófono funciona muy bien.",
-        "fecha": "2023-03-12"
-        ,
+        "descripcion": "Excelente para karaoke, pero el micrófono no es tan fácil de usar como otros.",
+        "fecha": "2023-03-12",
         "puntuacion": 3.9
       }
     ]
@@ -376,9 +353,8 @@
         "id": 18,
         "cli": "Diego Vargas",
         "prod": "Micrófono de Condensador USB",
-        "descripcion": "Excelente calidad de grabación, perfecto para streaming.",
-        "fecha": "2023-02-28"
-        ,
+        "descripcion": "Excelente calidad de grabación, pero no es tan fácil de usar como otros micrófonos.",
+        "fecha": "2023-02-28",
         "puntuacion": 2.7
       }
     ]
@@ -394,9 +370,8 @@
         "id": 19,
         "cli": "Luisa Delgado",
         "prod": "Auriculares Deportivos In-Ear",
-        "descripcion": "Muy cómodos y se mantienen bien en los oídos durante el ejercicio.",
-        "fecha": "2023-01-12"
-        ,
+        "descripcion": "Muy cómodos, pero no son tan resistentes al agua como otros auriculares.",
+        "fecha": "2023-01-12",
         "puntuacion": 1.7
       }
     ]
@@ -413,8 +388,7 @@
         "cli": "Pablo Reyes",
         "prod": "Micrófono de Condensador de Estudio",
         "descripcion": "Excelente micrófono para grabaciones de alta calidad en el estudio.",
-        "fecha": "2023-03-22"
-        ,
+        "fecha": "2023-03-22",
         "puntuacion": 4.9
       }
     ]
@@ -431,29 +405,9 @@
         "cli": "Marina Silva",
         "prod": "Auriculares Inalámbricos con Cancelación de Ruido",
         "descripcion": "Muy cómodos y la cancelación de ruido es excelente.",
-        "fecha": "2023-02-05"
-        ,
+        "fecha": "2023-02-05",
         "puntuacion": 4.1
       }
     ]
-  },
-  {
-    "id": 20,
-    "nombre": "Hugo Ramos",
-    "correo": "hugo.ramos@example.com",
-    "direccion": "Paseo de las Palmeras 4243",
-    "contrasenia": "hugo4243",
-    "valoraciones": [
-      {
-        "id": 22,
-        "cli": "Hugo Ramos",
-        "prod": "Altavoz Portátil Resistente al Agua",
-        "descripcion": "Excelente sonido y muy resistente al agua, perfecto para la playa.",
-        "fecha": "2023-03-18"
-        ,
-        "puntuacion": 5
-      }
-    ]
   }
-
 ]

@@ -1,3 +1,4 @@
+<!-- src/app/menu-base/menu-base.component.html -->
 <header>
   <div class="top-bar">
     <div class="left-links">
@@ -18,11 +19,14 @@
     <img src="assets/logoMauSearch.webp" alt="MauSearch Logo" class="logo" />
     <ul>
       <li><a routerLink="#">Descubre Neo</a></li>
-      <!-- Neo configurador de buscador, sino da tiempo déjalo como otro enlace con # -->
       <li><a routerLink="#">Productos</a></li>
       <li><a routerLink="#">Marketplace</a></li>
       <li><a routerLink="#">Configuraciones</a></li>
-      <li><a routerLink="#">Asistencia</a></li>
+      <li>
+        <a (click)="openAsistenciaDialog()" style="cursor: pointer"
+          >Asistencia</a
+        >
+      </li>
       <li><a routerLink="#">Valoraciones</a></li>
       <li>
         <a routerLink="#"
