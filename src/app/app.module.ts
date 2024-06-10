@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { AsistenciaComponent } from './asistencia/asistencia.component';
+import { PaqueteEjemploComponent } from './paquete-ejemplo/paquete-ejemplo.component';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AsistenciaComponent } from './asistencia/asistencia.component';
     LoginComponent,
     RegisterComponent,
     AsistenciaComponent,
+    PaqueteEjemploComponent,
   ],
   imports: [
     BrowserModule,

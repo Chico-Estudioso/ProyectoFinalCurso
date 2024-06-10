@@ -1,8 +1,8 @@
-// src/app/menu-base/menu-base.component.ts
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
+import { PaqueteEjemploComponent } from '../paquete-ejemplo/paquete-ejemplo.component';
 import { AsistenciaComponent } from '../asistencia/asistencia.component';
 
 @Component({
@@ -39,10 +39,22 @@ export class MenuBaseComponent {
     });
   }
 
+  openPaqueteEjemplo() {
+    const dialogRef = this.dialog.open(PaqueteEjemploComponent, {
+      width: '90%',
+      maxWidth: '1000px',
+      panelClass: 'custom-dialog-container',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`PaqueteEjemplo dialog result: ${result}`);
+    });
+  }
+
   openAsistenciaDialog() {
     const dialogRef = this.dialog.open(AsistenciaComponent, {
       width: '100%',
-      maxWidth: '800px',
+      maxWidth: '600px',
       panelClass: 'custom-dialog-container',
     });
 

@@ -1,4 +1,3 @@
-/* src/app/menu-base/menu-base.component.css */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -246,6 +245,6 @@ nav ul li .cart-icon {
   }
 
   .btn-scroll-top {
-    display: none; /* Ocultar el botón en pantallas pequeñas */
+    display: none; /* Ocultar botón en pantallas pequeñas */
   }
 }

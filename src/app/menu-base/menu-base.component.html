@@ -1,4 +1,3 @@
-<!-- src/app/menu-base/menu-base.component.html -->
 <header>
   <div class="top-bar">
     <div class="left-links">
@@ -6,10 +5,10 @@
       <a href="#">CLIENTES</a>
     </div>
     <div class="right-links">
-      <span
-        >Calidad garantizada | Plazo de 60 días para devolución y reembolso |
-        Valoraciones verificadas</span
-      >
+      <span>
+        Calidad garantizada | Plazo de 60 días para devolución y reembolso |
+        Valoraciones verificadas
+      </span>
       <a href="#">ES</a>
       <a (click)="openLoginDialog()" style="cursor: pointer">Iniciar sesión</a>
       <a (click)="openRegisterDialog()" style="cursor: pointer">Registrarse</a>
@@ -19,6 +18,7 @@
     <img src="assets/logoMauSearch.webp" alt="MauSearch Logo" class="logo" />
     <ul>
       <li><a routerLink="#">Descubre Neo</a></li>
+      <!-- Neo configurador de buscador, sino da tiempo déjalo como otro enlace con # -->
       <li><a routerLink="#">Productos</a></li>
       <li><a routerLink="#">Marketplace</a></li>
       <li><a routerLink="#">Configuraciones</a></li>
@@ -29,9 +29,9 @@
       </li>
       <li><a routerLink="#">Valoraciones</a></li>
       <li>
-        <a routerLink="#">
-          <img src="assets/!.webp" alt="Icon" class="cart-icon" />
-        </a>
+        <a routerLink="#"
+          ><img src="assets/!.webp" alt="Icon" class="cart-icon"
+        /></a>
       </li>
     </ul>
   </nav>
@@ -47,7 +47,9 @@
       </p>
       <div class="hero-buttons">
         <button class="primary-button">Descubre</button>
-        <button class="secondary-button">Haz un paquete y ahorra</button>
+        <button class="secondary-button" (click)="openPaqueteEjemplo()">
+          Haz un paquete y ahorra
+        </button>
       </div>
     </div>
     <div class="hero-image">
