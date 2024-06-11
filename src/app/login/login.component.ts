@@ -1,22 +1,23 @@
-// src/app/login/login.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ServicioBasicoService } from '../servicio-basico.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { AuthService } from '../auth.service';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loginForm: FormGroup;
   errorMessage: string | null = null;
 
   constructor(
     private fb: FormBuilder,
-    private router: Router,
-    private servicioBasico: ServicioBasicoService
+    private dialogRef: MatDialogRef<LoginComponent>,
+    private authService: AuthService,
+    private dialog: MatDialog
   ) {
     this.loginForm = this.fb.group({
       correo: ['', [Validators.required, Validators.email]],
@@ -24,18 +25,26 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
-
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { correo, contrasenia } = this.loginForm.value;
-      this.servicioBasico.login(correo, contrasenia).subscribe((isLoggedIn) => {
-        if (isLoggedIn) {
-          this.router.navigate(['/']);
-        } else {
+      this.authService.login(correo, contrasenia).subscribe({
+        next: (user) => {
+          if (user) {
+            this.dialogRef.close(true);
+          }
+        },
+        error: (err) => {
           this.errorMessage = 'Correo o contraseña incorrectos.';
-        }
+        },
       });
     }
+  }
+
+  openRegisterDialog(): void {
+    this.dialogRef.close();
+    this.dialog.open(RegisterComponent, {
+      width: '400px',
+    });
   }
 }

@@ -4,6 +4,7 @@ import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { PaqueteEjemploComponent } from '../paquete-ejemplo/paquete-ejemplo.component';
 import { AsistenciaComponent } from '../asistencia/asistencia.component';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-menu-base',
@@ -13,8 +14,7 @@ import { AsistenciaComponent } from '../asistencia/asistencia.component';
 export class MenuBaseComponent {
   selectedButton: string | null = null;
 
-  constructor(public dialog: MatDialog) {}
-
+  constructor(public dialog: MatDialog, public authService: AuthService) {}
   openLoginDialog() {
     const dialogRef = this.dialog.open(LoginComponent, {
       width: '100%',

@@ -1,9 +1,9 @@
-// src/app/register/register.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ServicioBasicoService } from '../servicio-basico.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { AuthService } from '../auth.service';
 import { Cliente } from '../cliente';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-register',
@@ -16,8 +16,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router,
-    private servicioBasico: ServicioBasicoService
+    private dialogRef: MatDialogRef<RegisterComponent>,
+    private authService: AuthService,
+    private dialog: MatDialog
   ) {
     this.registerForm = this.fb.group({
       correo: ['', [Validators.required, Validators.email]],
@@ -32,13 +33,22 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     if (this.registerForm.valid) {
       const newUser: Cliente = this.registerForm.value;
-      this.servicioBasico.register(newUser).subscribe((isRegistered) => {
-        if (isRegistered) {
-          this.router.navigate(['/login']);
-        } else {
+      this.authService.register(newUser).subscribe({
+        next: (user) => {
+          if (user) {
+            this.dialogRef.close(true);
+          }
+        },
+        error: (err) => {
           this.errorMessage = 'El correo ya está registrado.';
-        }
+        },
       });
     }
+  }
+  openLoginDialog(): void {
+    this.dialogRef.close();
+    this.dialog.open(LoginComponent, {
+      width: '400px',
+    });
   }
 }

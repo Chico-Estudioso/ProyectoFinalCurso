@@ -1,42 +1,48 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Cliente } from './cliente';
-import clientesData from '../assets/clientes.json';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private clientes: Cliente[] = clientesData;
   private currentUser: Cliente | null = null;
+  private apiUrl = 'http://localhost:3000/api';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
-  login(correo: string, contrasenia: string): boolean {
-    const user = this.clientes.find(
-      (cliente) =>
-        cliente.correo === correo && cliente.contrasenia === contrasenia
+  login(correo: string, contrasenia: string): Observable<Cliente | null> {
+    return this.http
+      .post<Cliente>(`${this.apiUrl}/login`, { correo, contrasenia })
+      .pipe(
+        map((user) => {
+          this.currentUser = user;
+          return user;
+        }),
+        catchError((err) => {
+          console.error('Login error:', err);
+          return of(null);
+        })
+      );
+  }
+
+  register(newUser: Cliente): Observable<Cliente | null> {
+    return this.http.post<Cliente>(`${this.apiUrl}/register`, newUser).pipe(
+      map((user) => {
+        this.currentUser = user;
+        return user;
+      }),
+      catchError((err) => {
+        console.error('Registration error:', err);
+        return of(null);
+      })
     );
-    if (user) {
-      this.currentUser = user;
-      this.router.navigate(['/']);
-      return true;
-    }
-    return false;
   }
 
-  register(newUser: Cliente): boolean {
-    if (this.clientes.find((cliente) => cliente.correo === newUser.correo)) {
-      return false; // Email already exists
-    }
-    newUser.id = Date.now(); // Generar un ID temporal
-    this.clientes.push(newUser);
-    this.currentUser = newUser;
-    this.router.navigate(['/']);
-    return true;
-  }
-
-  logout() {
+  logout(): void {
     this.currentUser = null;
     this.router.navigate(['/login']);
   }
@@ -47,5 +53,14 @@ export class AuthService {
 
   getCurrentUser(): Cliente | null {
     return this.currentUser;
+  }
+
+  getUserInitials(): string {
+    if (this.currentUser) {
+      return (
+        this.currentUser.nombre.charAt(0) + this.currentUser.correo.charAt(0)
+      );
+    }
+    return '';
   }
 }

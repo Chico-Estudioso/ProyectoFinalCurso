@@ -1,3 +1,4 @@
+<!-- src/app/login/login.component.html -->
 <div class="container">
   <div class="header">
     <a href="#" class="back-link">&larr; VOLVER</a>
@@ -6,7 +7,10 @@
     <div class="welcome-message">
       <h1>¡Bienvenido de Nuevo!</h1>
       <p>
-        ¿No tienes una cuenta? <a routerLink="/register">Regístrate ahora</a>
+        ¿No tienes una cuenta?
+        <a (click)="openRegisterDialog()" style="cursor: pointer"
+          >Regístrate ahora</a
+        >
       </p>
     </div>
     <div class="social-login">

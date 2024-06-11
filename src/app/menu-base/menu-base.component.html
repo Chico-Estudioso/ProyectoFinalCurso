@@ -1,3 +1,5 @@
+<!-- src/app/menu-base/menu-base.component.html -->
+
 <header>
   <div class="top-bar">
     <div class="left-links">
@@ -10,28 +12,43 @@
         Valoraciones verificadas
       </span>
       <a href="#">ES</a>
-      <a (click)="openLoginDialog()" style="cursor: pointer">Iniciar sesión</a>
-      <a (click)="openRegisterDialog()" style="cursor: pointer">Registrarse</a>
+      <ng-container *ngIf="authService.isLoggedIn(); else anonymous">
+        <span class="user-initials">{{ authService.getUserInitials() }}</span>
+      </ng-container>
+      <ng-template #anonymous>
+        <a (click)="openLoginDialog()" style="cursor: pointer"
+          >Iniciar sesión</a
+        >
+        <a (click)="openRegisterDialog()" style="cursor: pointer"
+          >Registrarse</a
+        >
+      </ng-template>
     </div>
   </div>
   <nav>
     <img src="assets/logoMauSearch.webp" alt="MauSearch Logo" class="logo" />
     <ul>
       <li><a routerLink="#">Descubre Neo</a></li>
-      <!-- Neo configurador de buscador, sino da tiempo déjalo como otro enlace con # -->
       <li><a routerLink="#">Productos</a></li>
       <li><a routerLink="#">Marketplace</a></li>
       <li><a routerLink="#">Configuraciones</a></li>
       <li>
-        <a (click)="openAsistenciaDialog()" style="cursor: pointer"
-          >Asistencia</a
+        <a
+          routerLink="/prodhub"
+          (click)="selectButton('prodhub')"
+          [ngClass]="{ active: selectedButton === 'prodhub' }"
+          style="cursor: pointer"
+          >Productos</a
         >
       </li>
-      <li><a routerLink="#">Valoraciones</a></li>
       <li>
-        <a routerLink="#"
-          ><img src="assets/!.webp" alt="Icon" class="cart-icon"
-        /></a>
+        <a
+          routerLink="/valoracionescli"
+          (click)="selectButton('valoracionescli')"
+          [ngClass]="{ active: selectedButton === 'valoracionescli' }"
+          style="cursor: pointer"
+          >Valoraciones</a
+        >
       </li>
     </ul>
   </nav>
