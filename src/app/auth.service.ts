@@ -42,13 +42,17 @@ export class AuthService {
     );
   }
 
+  isLoggedIn(): Observable<boolean> {
+    return of(this.currentUser !== null);
+  }
+
+  isAdmin(): Observable<boolean> {
+    return of(this.currentUser?.nombre === 'admin');
+  }
+
   logout(): void {
     this.currentUser = null;
     this.router.navigate(['/login']);
-  }
-
-  isLoggedIn(): boolean {
-    return this.currentUser !== null;
   }
 
   getCurrentUser(): Cliente | null {

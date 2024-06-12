@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Producto } from '../producto';
 import { ServicioBasicoService } from '../servicio-basico.service';
+import { AuthService } from '../auth.service'; // <-- Importa el servicio de autenticación
+import { RateProductComponent } from '../rate-product/rate-product.component';
 
 @Component({
   selector: 'app-prod-hub',
@@ -12,13 +14,17 @@ import { ServicioBasicoService } from '../servicio-basico.service';
 export class ProdHubComponent implements OnInit {
   productos: Producto[] = [];
   modifyProductForm: FormGroup;
+  rateProductForm: FormGroup;
+  isAdmin: boolean = false;
+  isLoggedIn: boolean = false; // <-- Define las variables correctamente
 
   @ViewChild('modifyProductModal') modifyProductModal: any;
 
   constructor(
     private servicioBasico: ServicioBasicoService,
     private dialog: MatDialog,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private authService: AuthService // <-- Inyecta el servicio de autenticación
   ) {
     this.modifyProductForm = this.fb.group({
       id: [{ value: '', disabled: true }],
@@ -27,11 +33,27 @@ export class ProdHubComponent implements OnInit {
       precio: ['', Validators.required],
       valoracion: ['', Validators.required],
     });
+
+    // Formulario para valorar productos
+    this.rateProductForm = this.fb.group({
+      rating: ['', [Validators.required, Validators.min(1), Validators.max(5)]],
+      review: ['', Validators.required],
+    });
   }
 
   ngOnInit(): void {
     this.servicioBasico.getProductos().subscribe((data) => {
       this.productos = data;
+    });
+
+    // Verificar si el usuario está logueado
+    this.authService.isLoggedIn().subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+    });
+
+    // Verificar si el usuario es admin
+    this.authService.isAdmin().subscribe((isAdmin) => {
+      this.isAdmin = isAdmin;
     });
   }
 
@@ -68,9 +90,22 @@ export class ProdHubComponent implements OnInit {
     console.log(`Producto añadido al carrito: ${producto.nombre}`);
   }
 
+  // Método para abrir el modal de valoración
+  openRateModal(producto: Producto) {
+    const dialogRef = this.dialog.open(RateProductComponent, {
+      width: '400px',
+      data: { productId: producto.id, productName: producto.nombre },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        console.log('Producto valorado con éxito');
+      }
+    });
+  }
+
+  // Método para obtener las estrellas de valoración
   getRatingStars(rating: number): string {
-    const filledStars = Math.floor(rating);
-    const emptyStars = 5 - filledStars;
-    return '★'.repeat(filledStars) + '☆'.repeat(emptyStars);
+    return '★'.repeat(Math.round(rating)) + '☆'.repeat(5 - Math.round(rating));
   }
 }

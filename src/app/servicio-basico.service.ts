@@ -79,4 +79,19 @@ export class ServicioBasicoService {
       return of(false);
     }
   }
+
+  addRating(productId: number, review: any): Observable<any> {
+    const clienteId = localStorage.getItem('loggedInUserId');
+    if (!clienteId) {
+      return of(null);
+    }
+    const url = `/api/clientes/${clienteId}/valoraciones`;
+    return this.http.post(url, {
+      cli: localStorage.getItem('loggedInUser'),
+      prod: productId,
+      descripcion: review.review,
+      fecha: new Date().toISOString().split('T')[0],
+      puntuacion: review.rating,
+    });
+  }
 }

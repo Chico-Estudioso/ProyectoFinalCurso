@@ -17,7 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { AsistenciaComponent } from './asistencia/asistencia.component';
 import { PaqueteEjemploComponent } from './paquete-ejemplo/paquete-ejemplo.component';
-import { BuscadorPrincipalComponent } from './buscador-principal/buscador-principal.component';
+import { BuscadorComponent } from './buscador/buscador.component';
+import { RateProductComponent } from './rate-product/rate-product.component';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BuscadorPrincipalComponent } from './buscador-principal/buscador-princi
     RegisterComponent,
     AsistenciaComponent,
     PaqueteEjemploComponent,
-    BuscadorPrincipalComponent,
+    BuscadorComponent,
+    RateProductComponent,
   ],
   imports: [
     BrowserModule,

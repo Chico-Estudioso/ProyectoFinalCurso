@@ -17,11 +17,23 @@
     <p class="rating">{{ getRatingStars(producto.valoracionMedia) }}</p>
     <p class="description">{{ producto.descripcion }}</p>
     <div class="button-group">
-      <button class="modify-button" (click)="openModifyModal(producto)">
+      <button
+        *ngIf="isAdmin"
+        class="modify-button"
+        (click)="openModifyModal(producto)"
+      >
         Modificar
       </button>
       <button class="cart-button" (click)="addToCart(producto)">
         Añadir al carrito
+      </button>
+      <!-- Botón de valorar visible solo si el usuario ha iniciado sesión -->
+      <button
+        *ngIf="isLoggedIn"
+        class="rate-button"
+        (click)="openRateModal(producto)"
+      >
+        Valorar
       </button>
     </div>
   </div>

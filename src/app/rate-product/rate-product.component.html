@@ -1,0 +1,76 @@
+<div class="review-container">
+  <h1>Escribir una opinión</h1>
+  <div class="product-info">
+    <img [src]="productImage" alt="Producto" />
+    <p>{{ productDescription }}</p>
+  </div>
+  <div class="title-section">
+    <h2>Añade un título</h2>
+    <input
+      type="text"
+      placeholder="¿Qué es lo más importante?"
+      [(ngModel)]="reviewDescription"
+    />
+  </div>
+  <div class="rating-section">
+    <h2>Valoración general</h2>
+    <div class="stars" data-aspect="general">
+      <span class="star" data-value="1" (click)="rate(1, 'general')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="2" (click)="rate(2, 'general')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="3" (click)="rate(3, 'general')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="4" (click)="rate(4, 'general')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="5" (click)="rate(5, 'general')"
+        >&#9734;</span
+      >
+    </div>
+  </div>
+  <div class="rating-section">
+    <h2>Cumple con lo prometido</h2>
+    <div class="stars" data-aspect="promised">
+      <span class="star" data-value="1" (click)="rate(1, 'promised')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="2" (click)="rate(2, 'promised')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="3" (click)="rate(3, 'promised')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="4" (click)="rate(4, 'promised')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="5" (click)="rate(5, 'promised')"
+        >&#9734;</span
+      >
+    </div>
+  </div>
+  <div class="rating-section">
+    <h2>Recomendaría este producto</h2>
+    <div class="stars" data-aspect="recommend">
+      <span class="star" data-value="1" (click)="rate(1, 'recommend')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="2" (click)="rate(2, 'recommend')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="3" (click)="rate(3, 'recommend')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="4" (click)="rate(4, 'recommend')"
+        >&#9734;</span
+      >
+      <span class="star" data-value="5" (click)="rate(5, 'recommend')"
+        >&#9734;</span
+      >
+    </div>
+  </div>
+  <button class="submit-button" (click)="submitReview()">Enviar</button>
+</div>

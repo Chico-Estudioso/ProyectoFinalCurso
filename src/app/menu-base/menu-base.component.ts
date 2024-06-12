@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
@@ -11,10 +11,13 @@ import { AuthService } from '../auth.service';
   templateUrl: './menu-base.component.html',
   styleUrls: ['./menu-base.component.css'],
 })
-export class MenuBaseComponent {
+export class MenuBaseComponent implements OnInit {
   selectedButton: string | null = null;
+  userInitials: string = '';
 
   constructor(public dialog: MatDialog, public authService: AuthService) {}
+  isLoggedIn: boolean = false;
+  ngOnInit(): void {}
   openLoginDialog() {
     const dialogRef = this.dialog.open(LoginComponent, {
       width: '100%',
@@ -24,7 +27,20 @@ export class MenuBaseComponent {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Login dialog result: ${result}`);
+      if (result) {
+        this.authService.isLoggedIn().subscribe((loggedIn) => {
+          this.isLoggedIn = loggedIn;
+          if (loggedIn) {
+            this.userInitials = this.authService.getUserInitials();
+          }
+        });
+      }
     });
+  }
+  logout() {
+    this.authService.logout();
+    this.isLoggedIn = false;
+    this.userInitials = '';
   }
 
   openRegisterDialog() {
@@ -36,6 +52,9 @@ export class MenuBaseComponent {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Register dialog result: ${result}`);
+      if (result) {
+        this.isLoggedIn = true;
+      }
     });
   }
 

@@ -1,0 +1,69 @@
+<header>
+  <div class="top-bar">
+    <div class="logo">MauSearch</div>
+    <div class="search-bar">
+      <select class="department-select">
+        <option value="todos">Todos los departamentos</option>
+        <option value="electronica">Electrónica</option>
+        <option value="libros">Libros</option>
+        <!-- Agrega más opciones según sea necesario -->
+      </select>
+      <input type="text" class="search-input" placeholder="Buscar" />
+      <button class="search-button">&#128269;</button>
+    </div>
+    <div class="account-info">
+      <span>Hola {{ userName }}</span>
+      <span>Cuenta y listas</span>
+      <span>Devoluciones y pedidos</span>
+      <span>Cesta</span>
+    </div>
+  </div>
+</header>
+<div class="main-content">
+  <aside class="sidebar">
+    <h2>Filtros</h2>
+    <div class="filter-section">
+      <h3>Con derecho a envío gratis</h3>
+      <label><input type="checkbox" /> Envío gratis por MauSearch</label>
+    </div>
+    <div class="filter-section">
+      <h3>Día de entrega</h3>
+      <label><input type="checkbox" /> Recíbelo mañana</label>
+    </div>
+    <div class="filter-section">
+      <h3>Departamento</h3>
+      <label><input type="checkbox" /> Auriculares para equipo de audio</label>
+      <label><input type="checkbox" /> Auriculares de oído abierto</label>
+      <label><input type="checkbox" /> Videojuegos</label>
+    </div>
+    <div class="filter-section">
+      <h3>Opinión de los clientes</h3>
+      <label><input type="checkbox" /> ★★★★☆ o más</label>
+    </div>
+    <div class="filter-section">
+      <h3>Marcas</h3>
+      <label><input type="checkbox" /> Sony</label>
+      <label><input type="checkbox" /> Xiaomi</label>
+      <label><input type="checkbox" /> JBL</label>
+      <label><input type="checkbox" /> Apple</label>
+      <label><input type="checkbox" /> Soundcore</label>
+      <label><input type="checkbox" /> Samsung</label>
+      <label><input type="checkbox" /> Philips</label>
+      <label><input type="checkbox" /> Ver más</label>
+    </div>
+    <div class="filter-section">
+      <h3>Precio</h3>
+      <input type="range" min="0" max="3900" step="1" />
+    </div>
+    <div class="filter-section">
+      <h3>Ofertas y ahorros</h3>
+      <label><input type="checkbox" /> Ofertas del día</label>
+      <label><input type="checkbox" /> Todos los ahorros</label>
+    </div>
+    <div class="filter-section">
+      <h3>Estado</h3>
+      <label><input type="checkbox" /> Nuevo</label>
+      <label><input type="checkbox" /> Usado</label>
+    </div>
+  </aside>
+</div>

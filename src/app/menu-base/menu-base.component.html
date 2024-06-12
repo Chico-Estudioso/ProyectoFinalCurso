@@ -1,9 +1,7 @@
-<!-- src/app/menu-base/menu-base.component.html -->
-
 <header>
   <div class="top-bar">
     <div class="left-links">
-      <a href="#">SEARCH |</a>
+      <a href="#">SEARCH</a>
       <a href="#">CLIENTES</a>
     </div>
     <div class="right-links">
@@ -12,17 +10,29 @@
         Valoraciones verificadas
       </span>
       <a href="#">ES</a>
-      <ng-container *ngIf="authService.isLoggedIn(); else anonymous">
-        <span class="user-initials">{{ authService.getUserInitials() }}</span>
-      </ng-container>
-      <ng-template #anonymous>
-        <a (click)="openLoginDialog()" style="cursor: pointer"
+      <ng-template #loginRegister
+        ><a
+          href="#"
+          *ngIf="!isLoggedIn"
+          (click)="openLoginDialog()"
+          style="cursor: pointer"
           >Iniciar sesión</a
         >
-        <a (click)="openRegisterDialog()" style="cursor: pointer"
+        <a
+          href="#"
+          *ngIf="!isLoggedIn"
+          (click)="openRegisterDialog()"
+          style="cursor: pointer"
           >Registrarse</a
-        >
-      </ng-template>
+        ></ng-template
+      >
+
+      <!-- <span *ngIf="isLoggedIn" class="user-icon">👤</span> -->
+      <!-- Icono de usuario cuando está logueado -->
+      <ng-container *ngIf="isLoggedIn; else loginRegister">
+        <span class="user-initials">{{ userInitials }}</span>
+        <a (click)="logout()" style="cursor: pointer">Cerrar sesión</a>
+      </ng-container>
     </div>
   </div>
   <nav>
@@ -32,29 +42,12 @@
       <li><a routerLink="#">Productos</a></li>
       <li><a routerLink="#">Marketplace</a></li>
       <li><a routerLink="#">Configuraciones</a></li>
+      <li><a routerLink="#">Asistencia</a></li>
+      <li><a routerLink="#">Valoraciones</a></li>
       <li>
-        <a
-          routerLink="/prodhub"
-          (click)="selectButton('prodhub')"
-          [ngClass]="{ active: selectedButton === 'prodhub' }"
-          style="cursor: pointer"
-          >Productos</a
-        >
-      </li>
-      <li>
-        <a (click)="openAsistenciaDialog()" style="cursor: pointer"
-          >Asistencia</a
-        >
-      </li>
-
-      <li>
-        <a
-          routerLink="/valoracionescli"
-          (click)="selectButton('valoracionescli')"
-          [ngClass]="{ active: selectedButton === 'valoracionescli' }"
-          style="cursor: pointer"
-          >Valoraciones</a
-        >
+        <a routerLink="#"
+          ><img src="assets/!.webp" alt="Icon" class="cart-icon"
+        /></a>
       </li>
     </ul>
   </nav>
@@ -70,9 +63,7 @@
       </p>
       <div class="hero-buttons">
         <button class="primary-button">Descubre</button>
-        <button class="secondary-button" (click)="openPaqueteEjemplo()">
-          Haz un paquete y ahorra
-        </button>
+        <button class="secondary-button">Haz un paquete y ahorra</button>
       </div>
     </div>
     <div class="hero-image">
