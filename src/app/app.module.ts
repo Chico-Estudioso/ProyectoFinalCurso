@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { AsistenciaComponent } from './asistencia/asistencia.component';
 import { PaqueteEjemploComponent } from './paquete-ejemplo/paquete-ejemplo.component';
+import { BuscadorPrincipalComponent } from './buscador-principal/buscador-principal.component';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PaqueteEjemploComponent } from './paquete-ejemplo/paquete-ejemplo.compo
     RegisterComponent,
     AsistenciaComponent,
     PaqueteEjemploComponent,
+    BuscadorPrincipalComponent,
   ],
   imports: [
     BrowserModule,
