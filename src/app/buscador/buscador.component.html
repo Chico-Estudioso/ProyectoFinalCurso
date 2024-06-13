@@ -44,7 +44,37 @@
     </div>
     <div class="filter-section">
       <h3>Opinión de los clientes</h3>
-      <label><input type="checkbox" /> ★★★★☆ o más</label>
+      <label
+        ><input type="checkbox" (change)="onRatingFilterChange()" /> ★★★★☆ o
+        más</label
+      >
+    </div>
+    <div class="filter-section">
+      <h3>Categoria</h3>
+      <label
+        ><input
+          type="checkbox"
+          value="Altavoces"
+          (change)="onCategoryFilterChange($event)"
+        />
+        Altavoces</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          value="Micrófonos"
+          (change)="onCategoryFilterChange($event)"
+        />
+        Micrófonos</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          value="Auriculares"
+          (change)="onCategoryFilterChange($event)"
+        />
+        Auriculares</label
+      >
     </div>
     <div class="filter-section">
       <h3>Marcas</h3>
@@ -63,10 +93,10 @@
         mat-slider
         type="range"
         min="0"
-        max="3900"
-        step="1"
+        max="1000"
+        step="50"
         [(ngModel)]="price"
-        (input)="updatePriceBadge()"
+        (input)="onPriceFilterChange()"
       />
       <span class="price-badge">{{ price | currency : "EUR" : true }}</span>
     </div>
@@ -76,9 +106,9 @@
       <label><input type="checkbox" /> Todos los ahorros</label>
     </div>
     <div class="filter-section">
-      <h3>Estado</h3>
-      <label><input type="checkbox" /> Nuevo</label>
-      <label><input type="checkbox" /> Usado</label>
+      <h3>Conexión</h3>
+      <label><input type="checkbox" /> Inalámbrico</label>
+      <label><input type="checkbox" /> Bluetooth</label>
     </div>
   </aside>
   <div class="product-results">

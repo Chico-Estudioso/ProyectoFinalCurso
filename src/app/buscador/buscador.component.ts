@@ -14,6 +14,8 @@ export class BuscadorComponent implements OnInit {
   searchTerm: string = '';
   productos: Producto[] = [];
   filteredProducts: Producto[] = [];
+  selectedCategories: Set<string> = new Set();
+  filterByRating: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -32,12 +34,48 @@ export class BuscadorComponent implements OnInit {
   updatePriceBadge(): void {
     // Actualiza la etiqueta de precio
     this.price = Math.ceil(this.price / 5) * 5;
+    this.applyFilters();
   }
 
   onSearch(): void {
-    this.filteredProducts = this.productos.filter((producto) =>
-      producto.nombre.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
+    this.applyFilters();
+  }
+
+  onCategoryFilterChange(event: any): void {
+    const category = event.target.value;
+    if (event.target.checked) {
+      this.selectedCategories.add(category);
+    } else {
+      this.selectedCategories.delete(category);
+    }
+    this.applyFilters();
+  }
+
+  onRatingFilterChange(): void {
+    this.filterByRating = !this.filterByRating;
+    this.applyFilters();
+  }
+
+  onPriceFilterChange(): void {
+    this.applyFilters();
+  }
+
+  applyFilters(): void {
+    this.filteredProducts = this.productos.filter((producto) => {
+      const matchesSearchTerm = producto.nombre
+        .toLowerCase()
+        .includes(this.searchTerm.toLowerCase());
+      const matchesCategory =
+        this.selectedCategories.size === 0 ||
+        this.selectedCategories.has(producto.categoria);
+      const matchesRating =
+        !this.filterByRating || producto.valoracionMedia >= 4;
+      const matchesPrice = producto.precio <= this.price;
+
+      return (
+        matchesSearchTerm && matchesCategory && matchesRating && matchesPrice
+      );
+    });
   }
 
   getRatingStars(rating: number): string {
