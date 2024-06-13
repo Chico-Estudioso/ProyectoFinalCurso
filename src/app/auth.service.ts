@@ -12,7 +12,13 @@ export class AuthService {
   private currentUser: Cliente | null = null;
   private apiUrl = 'http://localhost:3000/api';
 
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(private router: Router, private http: HttpClient) {
+    // Al inicializar el servicio, intentar cargar el usuario desde el localStorage
+    const savedUser = localStorage.getItem('currentUser');
+    if (savedUser) {
+      this.currentUser = JSON.parse(savedUser);
+    }
+  }
 
   login(correo: string, contrasenia: string): Observable<Cliente | null> {
     return this.http
@@ -20,6 +26,7 @@ export class AuthService {
       .pipe(
         map((user) => {
           this.currentUser = user;
+          localStorage.setItem('currentUser', JSON.stringify(user)); // Guardar en localStorage
           return user;
         }),
         catchError((err) => {
@@ -33,6 +40,7 @@ export class AuthService {
     return this.http.post<Cliente>(`${this.apiUrl}/register`, newUser).pipe(
       map((user) => {
         this.currentUser = user;
+        localStorage.setItem('currentUser', JSON.stringify(user)); // Guardar en localStorage
         return user;
       }),
       catchError((err) => {
@@ -52,11 +60,18 @@ export class AuthService {
 
   logout(): void {
     this.currentUser = null;
+    localStorage.removeItem('currentUser'); // Eliminar del localStorage
     this.router.navigate(['/login']);
   }
 
   getCurrentUser(): Cliente | null {
     return this.currentUser;
+  }
+  private loadCurrentUser(): void {
+    const savedUser = localStorage.getItem('currentUser');
+    if (savedUser) {
+      this.currentUser = JSON.parse(savedUser);
+    }
   }
 
   getUserInitials(): string {

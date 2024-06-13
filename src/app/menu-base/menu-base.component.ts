@@ -17,7 +17,14 @@ export class MenuBaseComponent implements OnInit {
 
   constructor(public dialog: MatDialog, public authService: AuthService) {}
   isLoggedIn: boolean = false;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.isLoggedIn().subscribe((loggedIn) => {
+      this.isLoggedIn = loggedIn;
+      if (loggedIn) {
+        this.userInitials = this.authService.getUserInitials();
+      }
+    });
+  }
   openLoginDialog() {
     const dialogRef = this.dialog.open(LoginComponent, {
       width: '100%',

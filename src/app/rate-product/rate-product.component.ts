@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AuthService } from '../auth.service';
 import { ServicioBasicoService } from '../servicio-basico.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class RateProductComponent {
   productImage: string;
   productDescription: string;
   reviewDescription: string = '';
+  currentUser: any;
 
   ratings: { [key: string]: number } = {
     // Definición explícita del tipo
@@ -22,8 +24,10 @@ export class RateProductComponent {
   constructor(
     public dialogRef: MatDialogRef<RateProductComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private servicioBasico: ServicioBasicoService
+    private servicioBasico: ServicioBasicoService,
+    private authService: AuthService
   ) {
+    this.currentUser = this.authService.getCurrentUser();
     this.productImage = data.productImage;
     this.productDescription = data.productDescription;
   }
@@ -32,21 +36,31 @@ export class RateProductComponent {
     this.ratings[aspect] = value; // Uso de índice con notación de tipo correcto
   }
 
-  submitReview() {
+  submitReview(): void {
     const overallRating = this.ratings['general'];
     const review = {
       rating: overallRating,
-      review: this.reviewDescription, // Usamos reviewDescription aquí
+      review: this.reviewDescription,
       aspects: {
         promised: this.ratings['promised'],
         recommend: this.ratings['recommend'],
       },
     };
-    this.servicioBasico.addRating(this.data.productId, review).subscribe(() => {
-      this.dialogRef.close(true);
-    });
-  }
 
+    if (this.currentUser) {
+      this.servicioBasico.addRating(this.data.productId, review).subscribe(
+        (response) => {
+          console.log('Valoración añadida:', response);
+          this.dialogRef.close(true);
+        },
+        (error) => {
+          console.error('Error al añadir valoración:', error);
+        }
+      );
+    } else {
+      console.error('Usuario no está logueado');
+    }
+  }
   updateStarColors(aspect: string): void {
     const stars = document.querySelectorAll(
       `.stars[data-aspect="${aspect}"] .star`

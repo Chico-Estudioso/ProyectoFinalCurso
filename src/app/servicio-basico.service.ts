@@ -5,6 +5,9 @@ import { map } from 'rxjs/operators';
 import { Producto } from './producto';
 import { Cliente } from './cliente';
 import { Valoracion } from './valoracion';
+import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
+AuthService;
 
 @Injectable({
   providedIn: 'root',
@@ -13,9 +16,15 @@ export class ServicioBasicoService {
   private clientesUrl = 'assets/clientes.json';
   private productosUrl = 'assets/productos.json';
   private clientes: Cliente[] = [];
+  private currentUser: Cliente | null = null;
   private loggedInUser: Cliente | null = null;
+  private apiUrl = 'http://localhost:3000/api';
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private authService: AuthService
+  ) {
     this.loadClientes();
   }
 
@@ -81,17 +90,14 @@ export class ServicioBasicoService {
   }
 
   addRating(productId: number, review: any): Observable<any> {
-    const clienteId = localStorage.getItem('loggedInUserId');
-    if (!clienteId) {
-      return of(null);
+    const currentUser = this.authService.getCurrentUser(); // Obtener el usuario actual
+    if (!currentUser) {
+      return new Observable((observer) => {
+        observer.error('User not logged in');
+        observer.complete();
+      });
     }
-    const url = `/api/clientes/${clienteId}/valoraciones`;
-    return this.http.post(url, {
-      cli: localStorage.getItem('loggedInUser'),
-      prod: productId,
-      descripcion: review.review,
-      fecha: new Date().toISOString().split('T')[0],
-      puntuacion: review.rating,
-    });
+    const url = `${this.apiUrl}/clientes/${currentUser.id}/valoraciones`;
+    return this.http.post(url, review);
   }
 }

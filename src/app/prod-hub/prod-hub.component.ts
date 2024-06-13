@@ -46,12 +46,10 @@ export class ProdHubComponent implements OnInit {
       this.productos = data;
     });
 
-    // Verificar si el usuario está logueado
     this.authService.isLoggedIn().subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;
     });
 
-    // Verificar si el usuario es admin
     this.authService.isAdmin().subscribe((isAdmin) => {
       this.isAdmin = isAdmin;
     });

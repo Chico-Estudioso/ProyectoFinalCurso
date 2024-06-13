@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuBaseComponent } from './menu-base/menu-base.component';
@@ -19,6 +19,7 @@ import { AsistenciaComponent } from './asistencia/asistencia.component';
 import { PaqueteEjemploComponent } from './paquete-ejemplo/paquete-ejemplo.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { RateProductComponent } from './rate-product/rate-product.component';
+import { AuthInterceptor } from './auth.interceptor'; // Asegúrate de que la ruta es correcta
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
   declarations: [
@@ -45,7 +46,10 @@ import { RateProductComponent } from './rate-product/rate-product.component';
     MatInputModule,
     // AngularFontAwesomeModule,
   ],
-  providers: [ServicioBasicoService],
+  providers: [
+    ServicioBasicoService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
