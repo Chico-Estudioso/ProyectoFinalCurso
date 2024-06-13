@@ -42,7 +42,12 @@
       <li><a routerLink="#">Productos</a></li>
       <li><a routerLink="#">Marketplace</a></li>
       <li><a routerLink="#">Configuraciones</a></li>
-      <li><a routerLink="#">Asistencia</a></li>
+      <li>
+        <a (click)="openAsistenciaDialog()" style="cursor: pointer"
+          >Asistencia</a
+        >
+      </li>
+      <!-- Llamada al método -->
       <li><a routerLink="#">Valoraciones</a></li>
       <li>
         <a routerLink="#"
