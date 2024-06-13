@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { ServicioBasicoService } from '../servicio-basico.service';
+import { Producto } from '../producto';
 
 @Component({
   selector: 'app-buscador',
@@ -6,9 +9,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buscador.component.css'],
 })
 export class BuscadorComponent implements OnInit {
-  userName: string = 'Mauro';
+  userName: string = '';
+  price: number = 0;
+  searchTerm: string = '';
+  productos: Producto[] = [];
+  filteredProducts: Producto[] = [];
 
-  constructor() {}
+  constructor(
+    private authService: AuthService,
+    private servicioBasico: ServicioBasicoService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const user = this.authService.getCurrentUser();
+    this.userName = user ? user.nombre : 'Invitado';
+    this.servicioBasico.getProductos().subscribe((productos) => {
+      this.productos = productos;
+      this.filteredProducts = productos;
+    });
+  }
+
+  updatePriceBadge(): void {
+    // Actualiza la etiqueta de precio
+    this.price = Math.ceil(this.price / 5) * 5;
+  }
+
+  onSearch(): void {
+    this.filteredProducts = this.productos.filter((producto) =>
+      producto.nombre.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
+
+  getRatingStars(rating: number): string {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 >= 0.5 ? '★' : '☆';
+    return '★'.repeat(fullStars) + halfStar + '☆'.repeat(4 - fullStars);
+  }
 }

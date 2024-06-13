@@ -86,6 +86,50 @@ header {
   margin-bottom: 5px;
 }
 
-.filter-section input[type='range'] {
+.filter-section input[type="range"] {
   width: 100%;
+}
+
+.product-results {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-item {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+}
+
+.product-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.price.expensive {
+  color: red;
+}
+
+.price.cheap {
+  color: green;
+}
+
+.rating {
+  color: gold;
+}
+
+.description {
+  margin-top: 10px;
 }

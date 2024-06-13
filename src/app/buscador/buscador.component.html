@@ -8,7 +8,13 @@
         <option value="libros">Libros</option>
         <!-- Agrega más opciones según sea necesario -->
       </select>
-      <input type="text" class="search-input" placeholder="Buscar" />
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Buscar"
+        [(ngModel)]="searchTerm"
+        (input)="onSearch()"
+      />
       <button class="search-button">&#128269;</button>
     </div>
     <div class="account-info">
@@ -53,7 +59,16 @@
     </div>
     <div class="filter-section">
       <h3>Precio</h3>
-      <input type="range" min="0" max="3900" step="1" />
+      <input
+        mat-slider
+        type="range"
+        min="0"
+        max="3900"
+        step="1"
+        [(ngModel)]="price"
+        (input)="updatePriceBadge()"
+      />
+      <span class="price-badge">{{ price | currency : "EUR" : true }}</span>
     </div>
     <div class="filter-section">
       <h3>Ofertas y ahorros</h3>
@@ -66,4 +81,27 @@
       <label><input type="checkbox" /> Usado</label>
     </div>
   </aside>
+  <div class="product-results">
+    <div *ngFor="let producto of filteredProducts" class="product-item">
+      <img
+        [src]="producto.imagen"
+        [alt]="producto.nombre"
+        class="product-image"
+      />
+      <div class="product-info">
+        <h2>{{ producto.nombre }}</h2>
+        <p
+          class="price"
+          [ngClass]="{
+            expensive: producto.precio > 50,
+            cheap: producto.precio <= 50
+          }"
+        >
+          EUR {{ producto.precio | number : "1.2-2" }}
+        </p>
+        <p class="rating">{{ getRatingStars(producto.valoracionMedia) }}</p>
+        <p class="description">{{ producto.descripcion }}</p>
+      </div>
+    </div>
+  </div>
 </div>
